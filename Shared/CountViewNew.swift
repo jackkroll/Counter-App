@@ -39,6 +39,8 @@ struct CountViewNew: View {
     
     @State var themeColor = CustomColor.noir
     
+    @FocusState var textFieldIsFocused : Bool
+    
     let impactHeavy = UIImpactFeedbackGenerator(style: .heavy)
     let impactLight = UIImpactFeedbackGenerator(style: .light)
     
@@ -103,6 +105,7 @@ struct CountViewNew: View {
                 VStack{
                     HStack{
                         TextField("Enter a title here", text: $title)
+                            .focused($textFieldIsFocused)
                             .foregroundColor(themeColor)
                             .onAppear{
                                 title = counts.first?.title ?? "Unknown"
@@ -116,6 +119,7 @@ struct CountViewNew: View {
                             }
                             .minimumScaleFactor(0.5)
                             .frame(width: geo.size.width * 0.5)
+                            .scrollDismissesKeyboard(.immediately)
                         
                         Text(String(Int(stepVal)))
                             .frame(width: 75, height: 50)
@@ -148,13 +152,35 @@ struct CountViewNew: View {
                 VStack{
                     Spacer()
                     HStack{
+                        //Quick undo button
                         if !options{
+                            RoundedRectangle(cornerRadius: 15)
+                                .overlay {
+                                    Image(systemName: counts.first?.step ?? 1 > 0 ? "minus" : "plus")
+                                        .resizable()
+                                        .scaledToFit()
+                                        .foregroundColor(colorScheme == .dark ? .black : .white)
+                                        .frame(width: 40, height: 40)
+                                        .padding(10)
+                                }
+                                .frame(width: 75, height: 75)
+                                .padding(5)
+                                .onTapGesture {
+                                    withAnimation{
+                                        textFieldIsFocused = false
+                                        impactLight.impactOccurred()
+                                        counts.first?.number -= Int64(counts.first?.step ?? 1)
+                                        try? moc.save()
+                                    }
+                                    number = Int(counts.first?.number ?? 0)
+                                }
+                                .foregroundStyle(themeColor)
+                            
                             Spacer()
                         }
+                        
                         ZStack{
                             RoundedRectangle(cornerRadius: 15)
-                                
-                                
                                 
                             VStack{
                                 if colorBar && options{
@@ -315,6 +341,7 @@ struct CountViewNew: View {
                                         .onTapGesture {
                                             print("Options Menu Opened")
                                             withAnimation{
+                                                textFieldIsFocused = false
                                                 options.toggle()
                                                 impactLight.impactOccurred()
                                                 colorBar = false
@@ -329,10 +356,6 @@ struct CountViewNew: View {
                         .frame(width: options ? geo.size.width * 0.9 : 50, height: (colorBar || step) ? 155: 50)
                         .padding()
                         .foregroundColor(themeColor)
-                        if !options{
-                            Spacer()
-                                .frame(width: geo.size.width * 0.05)
-                        }
                     }
                 }
                 
@@ -347,12 +370,20 @@ struct CountViewNew: View {
 
 
 struct CustomColor {
+    /*
     static let blue = Color("Blue")
     static let green = Color("Green")
     static let noir = Color("Noir")
     static let pink = Color("Pink")
     static let red = Color("Red")
     static let yellow = Color("Yellow")
+     */
+    static let blue = Color.blue
+    static let green = Color.green
+    static let noir = Color.gray
+    static let pink = Color.pink
+    static let red = Color.red
+    static let yellow = Color.yellow
 }
 
 

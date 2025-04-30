@@ -16,7 +16,7 @@ struct UpdateLog: View {
         GeometryReader{ geo in
             VStack{
                 HStack{
-                    Text("v1.20 Improvements")
+                    Text("v2.1 Improvements")
                         .font(.largeTitle)
                         .fontWeight(.semibold)
                         .padding()
@@ -24,7 +24,7 @@ struct UpdateLog: View {
                 ScrollView{
                 VStack{
                     HStack{
-                        Text("• Refreshed UI")
+                        Text("• Quick access +/- buttons")
                             .padding()
                             .font(.title3)
                             .fontWeight(.semibold)
@@ -33,7 +33,7 @@ struct UpdateLog: View {
                     
                         VStack{
                             HStack{
-                                Text("• New Colors")
+                                Text("• Updated colors")
                                     .padding()
                                     .font(.title3)
                                     .fontWeight(.semibold)
@@ -76,15 +76,7 @@ struct UpdateLog: View {
                         }
                         
                         HStack{
-                            Text("• Colors now work on both light and dark mode")
-                                .padding()
-                                .font(.title3)
-                                .fontWeight(.semibold)
-                            Spacer()
-                        }
-                        
-                        HStack{
-                            Text("• Horizontal orientation scales properly")
+                            Text("• Drag to arrange counts")
                                 .padding()
                                 .font(.title3)
                                 .fontWeight(.semibold)
@@ -101,17 +93,16 @@ struct UpdateLog: View {
                 HStack{
                     Spacer()
                     Text("👍")
-                        .padding()
-                        .frame(width: geo.size.width * 0.9 - 25)
-                        .background(.blue)
-                        .cornerRadius(15)
-                        .padding()
-                        .fontWeight(.semibold)
-                        .font(.largeTitle)
-                        .onTapGesture {
-                            dismiss()
-                        }
                     Spacer()
+                }
+                .padding()
+                .background(.blue)
+                .cornerRadius(15)
+                .fontWeight(.semibold)
+                .font(.largeTitle)
+                .frame(width: geo.size.width * 0.9)
+                .onTapGesture {
+                    dismiss()
                 }
             }
         }
@@ -141,12 +132,12 @@ struct ReviewApp: View{
                     Spacer()
                     Text("Not Really")
                         .frame(width: geo.size.width * 0.4, height: 50)
-                        .background(CustomColor.red)
+                        .background(Color.red)
                         .foregroundColor(.white)
                         .cornerRadius(15)
                         .fontWeight(.semibold)
                         .onTapGesture {
-                            let mailtoString = "mailto:counting@atlasbot.net.com?subject=Counting App Feedback".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+                            let mailtoString = "mailto:support@jackk.dev?subject=Counting App Feedback".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
                             let mailtoUrl = URL(string: mailtoString!)!
                             if UIApplication.shared.canOpenURL(mailtoUrl) {
                                     UIApplication.shared.open(mailtoUrl, options: [:])
@@ -157,7 +148,7 @@ struct ReviewApp: View{
                     
                     Text("Love it")
                         .frame(width: geo.size.width * 0.4, height: 50)
-                        .background(CustomColor.green)
+                        .background(Color.green)
                         .foregroundColor(.white)
                         .cornerRadius(15)
                         .fontWeight(.semibold)
@@ -170,21 +161,19 @@ struct ReviewApp: View{
             Spacer()
                 .frame(height: 20)
             HStack{
+                Spacer()
                 Text("Don't show this again")
-                    .frame(width: geo.size.width * 0.8, height: 50)
-                    .background(.gray)
-                    .foregroundColor(.white)
-                    .cornerRadius(15)
-                    .fontWeight(.semibold)
-                    .onTapGesture {
-                        reviewMute = true
-                        dismiss()
-                    }
-                //Spacer()
-                    
+                Spacer()
+            }
+            .foregroundColor(.white)
+            .cornerRadius(15)
+            .fontWeight(.semibold)
+            .onTapGesture {
+                reviewMute = true
+                dismiss()
             }
             .frame(width: geo.size.width * 0.8, height: 40)
-            .background(CustomColor.noir)
+            .background(Color.gray)
             .cornerRadius(10)
             }
             
@@ -196,6 +185,6 @@ struct ReviewApp: View{
 
 struct Supplemental_Views_Previews: PreviewProvider {
     static var previews: some View {
-       ReviewApp()
+       UpdateLog()
     }
 }

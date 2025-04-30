@@ -40,7 +40,7 @@ struct MainView: View {
                     }
                     if counts.count > 0{
                         ScrollView{
-                            ForEach(counts){count in
+                            ForEach(counts) {count in
                                 ZStack{
                                     RoundedRectangle(cornerRadius: 15)
                                         .foregroundColor(Color(uiColor: UIColor.systemGray5))
@@ -148,28 +148,6 @@ struct MainView: View {
                                 }
                             }
                     }
-                
-                    /*
-                    Spacer()
-                    
-                    RoundedRectangle(cornerRadius: 15)
-                        .frame(width: 70, height: 70)
-                        .foregroundColor(.pink)
-                        .overlay{
-                            Image(systemName: "trash")
-                                .resizable()
-                                .padding()
-                                .foregroundColor(colorScheme == .dark ? .black : .white)
-                                .onTapGesture {
-                                    withAnimation{
-                                        for count in counts{
-                                            moc.delete(count)
-                                        }
-                                        try? moc.save()
-                                    }
-                                }
-                        }
-                     */
                 }
                 .onAppear{
                     if updateLog != appVersion{
