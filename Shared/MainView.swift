@@ -9,11 +9,23 @@
 import SwiftUI
 import CoreData
 
+struct Count : Identifiable {
+    var date : Date
+    var displayed : Bool
+    var number : Int
+    var step : Int
+    var theme : String
+    var title : String
+    var id: UUID
+}
+
+
 struct MainView: View {
     @Environment(\.colorScheme) var colorScheme
     
     @Environment(\.managedObjectContext) var moc
-    @FetchRequest(sortDescriptors: [SortDescriptor(\.date, order: .reverse)]) var counts: FetchedResults<Database>
+    @State var counts : [Count] = []
+    @FetchRequest(sortDescriptors: [SortDescriptor(\.date, order: .reverse)]) var countsDB: FetchedResults<Database>
     
     @State var showCount = false
     @State var showReview = false
@@ -39,15 +51,15 @@ struct MainView: View {
                         Spacer()
                     }
                     if counts.count > 0{
-                        ScrollView{
-                            ForEach(counts) {count in
+                        //ScrollView{
+                            List($counts, editActions: .all) { $count in
                                 ZStack{
                                     RoundedRectangle(cornerRadius: 15)
                                         .foregroundColor(Color(uiColor: UIColor.systemGray5))
                                     
                                     HStack{
-                                        Text(count.title ?? "Unknown")
-                                            .foregroundColor(colorDecider(inputColor: count.theme ?? "Bismuth"))
+                                        Text(count.title)
+                                            .foregroundColor(colorDecider(inputColor: count.theme))
                                             .fontWeight(.semibold)
                                             .font(.title)
                                             .padding()
@@ -55,7 +67,7 @@ struct MainView: View {
                                         
                                         Spacer()
                                         Text("\(count.number)")
-                                            .foregroundColor(colorDecider(inputColor: count.theme ?? "Bismuth"))
+                                            .foregroundColor(colorDecider(inputColor: count.theme))
                                             .fontWeight(.light)
                                             .font(.title)
                                             .padding()
@@ -64,30 +76,24 @@ struct MainView: View {
                                     
                                     
                                 }
-                                
+                                .listRowSeparator(.hidden)
                                 .transition(.opacity)
                                 .frame(width: geo.size.width * 0.9, height: geo.size.height * 0.125)
                                 .onTapGesture {
                                     count.date = .now
                                     showCount = true
                                 }
-                                .contextMenu {
-                                    Button(role: .destructive){
-                                        withAnimation{
-                                            moc.delete(count)
-                                            try? moc.save()
-                                        }
-                                    } label: {
-                                        Label("Delete Count", systemImage: "trash")
-                                    }
-                                }
-                                
-                                
-                                
-                                //.padding()
                                 
                             }
-                        }
+                            .safeAreaInset(edge: .bottom, content: {
+                                Spacer()
+                                    .frame(height: 100)
+                            })
+                            .listStyle(.plain)
+                            .scrollContentBackground(.hidden)
+                            .background(Color.clear)
+                            
+                        //}
                         .sheet(isPresented: $showCount){
                             CountViewNew()
                                 .onDisappear{
@@ -159,6 +165,13 @@ struct MainView: View {
                 .padding()
                 .sheet(isPresented: $displayUpdateLog){
                     UpdateLog()
+                }
+                
+            }
+            .onAppear{
+                for countEntry in countsDB {
+                    let count = Count(date: countEntry.date ?? Date.distantPast, displayed: countEntry.displayed, number: Int(countEntry.number), step: Int(countEntry.step), theme: countEntry.theme ?? "Bismuth", title: countEntry.title ?? "Untitled", id: countEntry.uuid ?? UUID())
+                    counts.append(count)
                 }
                 
             }
