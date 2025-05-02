@@ -97,7 +97,7 @@ struct CountViewNew: View {
                     impactLight.impactOccurred()
                     try? moc.save()
                     number = Int(counts.first?.number ?? 0)
-                    print("Tapped")
+                    textFieldIsFocused = false
                 }
                 
                 //Header
@@ -168,7 +168,7 @@ struct CountViewNew: View {
                                 .onTapGesture {
                                     withAnimation{
                                         textFieldIsFocused = false
-                                        impactLight.impactOccurred()
+                                        impactHeavy.impactOccurred()
                                         counts.first?.number -= Int64(counts.first?.step ?? 1)
                                         try? moc.save()
                                     }
@@ -343,7 +343,7 @@ struct CountViewNew: View {
                                             withAnimation{
                                                 textFieldIsFocused = false
                                                 options.toggle()
-                                                impactLight.impactOccurred()
+                                                impactHeavy.impactOccurred()
                                                 colorBar = false
                                                 uppersegment = false
                                                 step = false

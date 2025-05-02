@@ -9,7 +9,7 @@
 import SwiftUI
 import CoreData
 
-struct Count : Identifiable {
+struct Count : Identifiable, Equatable{
     var date : Date
     var displayed : Bool
     var number : Int
@@ -51,49 +51,79 @@ struct MainView: View {
                         Spacer()
                     }
                     if counts.count > 0{
-                        //ScrollView{
-                            List($counts, editActions: .all) { $count in
-                                ZStack{
-                                    RoundedRectangle(cornerRadius: 15)
-                                        .foregroundColor(Color(uiColor: UIColor.systemGray5))
-                                    
-                                    HStack{
-                                        Text(count.title)
-                                            .foregroundColor(colorDecider(inputColor: count.theme))
-                                            .fontWeight(.semibold)
-                                            .font(.title)
-                                            .padding()
-                                        
-                                        
-                                        Spacer()
-                                        Text("\(count.number)")
-                                            .foregroundColor(colorDecider(inputColor: count.theme))
-                                            .fontWeight(.light)
-                                            .font(.title)
-                                            .padding()
-                                        
-                                    }
+                        List($counts, editActions: .all) { $count in
+                            ZStack{
+                                RoundedRectangle(cornerRadius: 15)
+                                    .foregroundColor(Color(uiColor: UIColor.systemGray5))
+                                
+                                HStack{
+                                    Text(count.title)
+                                        .foregroundColor(colorDecider(inputColor: count.theme))
+                                        .fontWeight(.semibold)
+                                        .font(.title)
+                                        .padding()
                                     
                                     
-                                }
-                                .listRowSeparator(.hidden)
-                                .transition(.opacity)
-                                .frame(width: geo.size.width * 0.9, height: geo.size.height * 0.125)
-                                .onTapGesture {
-                                    count.date = .now
-                                    showCount = true
+                                    Spacer()
+                                    Text("\(count.number)")
+                                        .foregroundColor(colorDecider(inputColor: count.theme))
+                                        .fontWeight(.light)
+                                        .font(.title)
+                                        .padding()
+                                    
                                 }
                                 
+                                
                             }
-                            .safeAreaInset(edge: .bottom, content: {
-                                Spacer()
-                                    .frame(height: 100)
-                            })
-                            .listStyle(.plain)
-                            .scrollContentBackground(.hidden)
-                            .background(Color.clear)
+                            .transition(.opacity)
+                            .listRowSeparator(.hidden)
+                            .transition(.opacity)
+                            .frame(width: geo.size.width * 0.9, height: geo.size.height * 0.125)
+                            .onTapGesture {
+                                count.date = .now
+                                showCount = true
+                            }
+                            .swipeActions(edge: .trailing) {
+                                Button{
+                                    let countInDB = fetchCount(count: count, results: countsDB)
+                                    if countInDB != nil{
+                                        moc.delete(countInDB!)
+                                        try? moc.save()
+                                        withAnimation{
+                                            counts.remove(object: count)
+                                        }
+                                    }
+                                } label: {
+                                    Label("Delete", systemImage: "trash")
+                                }
+                                .tint(.red)
+                                
+                                Button{
+                                    let countInDB = fetchCount(count: count, results: countsDB)
+                                    if countInDB != nil{
+                                        countInDB!.number = 0
+                                        try? moc.save()
+                                        withAnimation {
+                                            count.number = 0
+                                        }
+                                    }
+                                    
+                                } label: {
+                                    Label("Recycle", systemImage: "arrow.3.trianglepath")
+                                }
+                                .tint(.yellow)
+                                
+                            }
                             
-                        //}
+                        }
+                        .safeAreaInset(edge: .bottom, content: {
+                            Spacer()
+                                .frame(height: 100)
+                        })
+                        .listStyle(.plain)
+                        .scrollContentBackground(.hidden)
+                        .background(Color.clear)
+                        
                         .sheet(isPresented: $showCount){
                             CountViewNew()
                                 .onDisappear{
@@ -113,7 +143,7 @@ struct MainView: View {
                                 .onDisappear{
                                     closed += 1
                                 }
-                                
+                            
                         }
                     }
                     else{
@@ -151,6 +181,9 @@ struct MainView: View {
                                     count.date = Date()
                                     count.uuid = UUID()
                                     try? moc.save()
+                                    withAnimation {
+                                        counts.append(Count(date: count.date!, displayed: false, number: Int(count.number), step: Int(count.step), theme: count.theme!, title: count.title!, id: count.uuid!))
+                                    }
                                 }
                             }
                     }
@@ -173,9 +206,26 @@ struct MainView: View {
                     let count = Count(date: countEntry.date ?? Date.distantPast, displayed: countEntry.displayed, number: Int(countEntry.number), step: Int(countEntry.step), theme: countEntry.theme ?? "Bismuth", title: countEntry.title ?? "Untitled", id: countEntry.uuid ?? UUID())
                     counts.append(count)
                 }
-                
             }
         }
+    }
+}
+
+func fetchCount(count: Count ,results: FetchedResults<Database>) -> FetchedResults<Database>.Element? {
+    for countDB in results {
+        if countDB.uuid == count.id {
+            return countDB
+        }
+    }
+    return nil
+}
+
+extension Array where Element: Equatable {
+    
+    // Remove first collection element that is equal to the given `object`:
+    mutating func remove(object: Element) {
+        guard let index = firstIndex(of: object) else {return}
+        remove(at: index)
     }
 }
 
