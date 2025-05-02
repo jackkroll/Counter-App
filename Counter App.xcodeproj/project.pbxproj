@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		042602F22965FBFB00F4055D /* Supplemental Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042602F12965FBFB00F4055D /* Supplemental Views.swift */; };
 		042602F32965FBFB00F4055D /* Supplemental Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042602F12965FBFB00F4055D /* Supplemental Views.swift */; };
-		043B6E222953826D00335FB8 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043B6E212953826D00335FB8 /* MainView.swift */; };
-		043B6E232953826D00335FB8 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043B6E212953826D00335FB8 /* MainView.swift */; };
 		0475A9FD28B93B7700E47EEA /* Database.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0475A9FB28B93B7700E47EEA /* Database.xcdatamodeld */; };
 		0475A9FE28B93B7700E47EEA /* Database.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0475A9FB28B93B7700E47EEA /* Database.xcdatamodeld */; };
 		0475AA0028B93DED00E47EEA /* Data Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0475A9FF28B93DED00E47EEA /* Data Controller.swift */; };
@@ -25,10 +23,11 @@
 		0491BE36289858F9009B0214 /* Funni_ProjectsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0491BE0D289858F4009B0214 /* Funni_ProjectsApp.swift */; };
 		0491BE37289858F9009B0214 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0491BE0E289858F4009B0214 /* ContentView.swift */; };
 		0491BE38289858F9009B0214 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0491BE0E289858F4009B0214 /* ContentView.swift */; };
-		04F7833B28A844580097C608 /* CountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F7833A28A844580097C608 /* CountView.swift */; };
-		04F7833C28A844590097C608 /* CountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F7833A28A844580097C608 /* CountView.swift */; };
 		04FA1F59295651F400486C65 /* CountViewNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FA1F58295651F400486C65 /* CountViewNew.swift */; };
 		04FA1F5A295651F400486C65 /* CountViewNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FA1F58295651F400486C65 /* CountViewNew.swift */; };
+		568825A12DC55397004AF370 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 568825A02DC55397004AF370 /* Assets.xcassets */; };
+		568825A32DC55BD0004AF370 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568825A22DC55BD0004AF370 /* MainView.swift */; };
+		568825A42DC55BD0004AF370 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568825A22DC55BD0004AF370 /* MainView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,7 +64,6 @@
 		042602F12965FBFB00F4055D /* Supplemental Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Supplemental Views.swift"; sourceTree = "<group>"; };
 		04341FB528C288FD0072CEFE /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		04341FB728C288FD0072CEFE /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
-		043B6E212953826D00335FB8 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		0475A9FC28B93B7700E47EEA /* Database.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Database.xcdatamodel; sourceTree = "<group>"; };
 		0475A9FF28B93DED00E47EEA /* Data Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data Controller.swift"; sourceTree = "<group>"; };
 		0475AA0228B949F900E47EEA /* View Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View Controller.swift"; sourceTree = "<group>"; };
@@ -80,8 +78,9 @@
 		0491BE2D289858F9009B0214 /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0491BE31289858F9009B0214 /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
 		0491BE33289858F9009B0214 /* Tests_macOSLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOSLaunchTests.swift; sourceTree = "<group>"; };
-		04F7833A28A844580097C608 /* CountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountView.swift; sourceTree = "<group>"; };
 		04FA1F58295651F400486C65 /* CountViewNew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountViewNew.swift; sourceTree = "<group>"; };
+		568825A02DC55397004AF370 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		568825A22DC55BD0004AF370 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +127,7 @@
 		0491BE07289858F4009B0214 = {
 			isa = PBXGroup;
 			children = (
+				568825A02DC55397004AF370 /* Assets.xcassets */,
 				0491BE0C289858F4009B0214 /* Shared */,
 				0491BE1B289858F9009B0214 /* macOS */,
 				0491BE24289858F9009B0214 /* Tests iOS */,
@@ -144,11 +144,10 @@
 				0475A9FF28B93DED00E47EEA /* Data Controller.swift */,
 				0491BE0E289858F4009B0214 /* ContentView.swift */,
 				0475AA0228B949F900E47EEA /* View Controller.swift */,
-				043B6E212953826D00335FB8 /* MainView.swift */,
 				04FA1F58295651F400486C65 /* CountViewNew.swift */,
 				042602F12965FBFB00F4055D /* Supplemental Views.swift */,
 				0475A9FB28B93B7700E47EEA /* Database.xcdatamodeld */,
-				04F7833A28A844580097C608 /* CountView.swift */,
+				568825A22DC55BD0004AF370 /* MainView.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -274,7 +273,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1340;
-				LastUpgradeCheck = 1410;
+				LastUpgradeCheck = 1630;
 				ORGANIZATIONNAME = JackKroll;
 				TargetAttributes = {
 					0491BE13289858F9009B0214 = {
@@ -303,7 +302,6 @@
 			);
 			mainGroup = 0491BE07289858F4009B0214;
 			packageReferences = (
-				043B6E2429538C0C00335FB8 /* XCRemoteSwiftPackageReference "FluidGradient" */,
 			);
 			productRefGroup = 0491BE15289858F9009B0214 /* Products */;
 			projectDirPath = "";
@@ -322,6 +320,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				568825A12DC55397004AF370 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,12 +353,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				0475AA0028B93DED00E47EEA /* Data Controller.swift in Sources */,
+				568825A42DC55BD0004AF370 /* MainView.swift in Sources */,
 				042602F22965FBFB00F4055D /* Supplemental Views.swift in Sources */,
-				043B6E222953826D00335FB8 /* MainView.swift in Sources */,
 				0475AA0328B949F900E47EEA /* View Controller.swift in Sources */,
 				04FA1F59295651F400486C65 /* CountViewNew.swift in Sources */,
 				0491BE37289858F9009B0214 /* ContentView.swift in Sources */,
-				04F7833B28A844580097C608 /* CountView.swift in Sources */,
 				0475A9FD28B93B7700E47EEA /* Database.xcdatamodeld in Sources */,
 				0491BE35289858F9009B0214 /* Funni_ProjectsApp.swift in Sources */,
 			);
@@ -370,12 +368,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				0475AA0128B93DED00E47EEA /* Data Controller.swift in Sources */,
+				568825A32DC55BD0004AF370 /* MainView.swift in Sources */,
 				042602F32965FBFB00F4055D /* Supplemental Views.swift in Sources */,
-				043B6E232953826D00335FB8 /* MainView.swift in Sources */,
 				0475AA0428B949F900E47EEA /* View Controller.swift in Sources */,
 				04FA1F5A295651F400486C65 /* CountViewNew.swift in Sources */,
 				0491BE38289858F9009B0214 /* ContentView.swift in Sources */,
-				04F7833C28A844590097C608 /* CountView.swift in Sources */,
 				0475A9FE28B93B7700E47EEA /* Database.xcdatamodeld in Sources */,
 				0491BE36289858F9009B0214 /* Funni_ProjectsApp.swift in Sources */,
 			);
@@ -450,8 +447,10 @@
 				COPY_PHASE_STRIP = NO;
 				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = ZS9H682SJQ;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -509,8 +508,10 @@
 				COPY_PHASE_STRIP = NO;
 				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = ZS9H682SJQ;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -529,13 +530,11 @@
 		0491BE3E289858F9009B0214 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 6;
-				DEVELOPMENT_TEAM = ZS9H682SJQ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Counter-App--iOS--Info.plist";
@@ -547,7 +546,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -568,13 +567,11 @@
 		0491BE3F289858F9009B0214 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 6;
-				DEVELOPMENT_TEAM = ZS9H682SJQ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Counter-App--iOS--Info.plist";
@@ -586,7 +583,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -616,7 +613,6 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
-				DEVELOPMENT_TEAM = ZS9H682SJQ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
@@ -645,7 +641,6 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
-				DEVELOPMENT_TEAM = ZS9H682SJQ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
@@ -666,12 +661,10 @@
 		0491BE44289858F9009B0214 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = ZS9H682SJQ;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MARKETING_VERSION = 1.0;
@@ -690,12 +683,10 @@
 		0491BE45289858F9009B0214 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = ZS9H682SJQ;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MARKETING_VERSION = 1.0;
@@ -715,11 +706,9 @@
 		0491BE47289858F9009B0214 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
-				DEVELOPMENT_TEAM = ZS9H682SJQ;
 				GENERATE_INFOPLIST_FILE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 12.3;
 				MARKETING_VERSION = 1.0;
@@ -735,11 +724,9 @@
 		0491BE48289858F9009B0214 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
-				DEVELOPMENT_TEAM = ZS9H682SJQ;
 				GENERATE_INFOPLIST_FILE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 12.3;
 				MARKETING_VERSION = 1.0;
@@ -801,17 +788,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		043B6E2429538C0C00335FB8 /* XCRemoteSwiftPackageReference "FluidGradient" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Cindori/FluidGradient";
-			requirement = {
-				branch = main;
-				kind = branch;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCVersionGroup section */
 		0475A9FB28B93B7700E47EEA /* Database.xcdatamodeld */ = {

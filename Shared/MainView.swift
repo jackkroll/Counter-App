@@ -80,8 +80,12 @@ struct MainView: View {
                             .transition(.opacity)
                             .frame(width: geo.size.width * 0.9, height: geo.size.height * 0.125)
                             .onTapGesture {
-                                count.date = .now
-                                showCount = true
+                                let countInDB = fetchCount(count: count, results: countsDB)
+                                if countInDB != nil {
+                                    countInDB!.date = .now
+                                    try? moc.save()
+                                    showCount = true
+                                }
                             }
                             .swipeActions(edge: .trailing) {
                                 Button{
@@ -136,6 +140,16 @@ struct MainView: View {
                                         print(closed)
                                     }
                                 }
+                        }
+                        .onChange(of: showCount) { _, newValue in
+                            if newValue == false{
+                                counts = []
+                                for countEntry in countsDB {
+                                    let count = Count(date: countEntry.date ?? Date.distantPast, displayed: countEntry.displayed, number: Int(countEntry.number), step: Int(countEntry.step), theme: countEntry.theme ?? "Bismuth", title: countEntry.title ?? "Untitled", id: countEntry.uuid ?? UUID())
+                                    counts.append(count)
+                                }
+                            }
+                            
                         }
                         .sheet(isPresented: $showReview){
                             ReviewApp()

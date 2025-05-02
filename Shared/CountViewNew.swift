@@ -272,7 +272,7 @@ struct CountViewNew: View {
                                         Slider(value: $stepVal, in: -10...10)
                                             .tint(colorScheme == .dark ? .black : .white)
                                             .frame(width: geo.size.width * 0.7)
-                                            .onChange(of: $stepVal.wrappedValue){ change in
+                                            .onChange(of: $stepVal.wrappedValue){ _, change in
                                                 counts.first?.step = Int16(change)
                                                 try? moc.save()
                                             }
@@ -353,7 +353,7 @@ struct CountViewNew: View {
                                 .padding()
                             }
                         }
-                        .frame(width: options ? geo.size.width * 0.9 : 50, height: (colorBar || step) ? 155: 50)
+                        .frame(width: options ? geo.size.width * 0.9 : 50, height: ((colorBar || step) && options) ? 155: 50)
                         .padding()
                         .foregroundColor(themeColor)
                     }
