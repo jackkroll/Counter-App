@@ -75,6 +75,7 @@ struct MainView: View {
                                 
                                 
                             }
+                            
                             .transition(.opacity)
                             .listRowSeparator(.hidden)
                             .transition(.opacity)
@@ -127,7 +128,14 @@ struct MainView: View {
                         .listStyle(.plain)
                         .scrollContentBackground(.hidden)
                         .background(Color.clear)
-                        
+                        .onChange(of: counts) { _, newValue in
+                            let defaults = UserDefaults.standard
+                            var organized : [String] = []
+                            for count in newValue {
+                                organized.append(count.id.uuidString)
+                            }
+                            defaults.set(organized, forKey: "OrganizedCounts")
+                        }
                         .sheet(isPresented: $showCount){
                             CountViewNew()
                                 .onDisappear{
@@ -143,11 +151,7 @@ struct MainView: View {
                         }
                         .onChange(of: showCount) { _, newValue in
                             if newValue == false{
-                                counts = []
-                                for countEntry in countsDB {
-                                    let count = Count(date: countEntry.date ?? Date.distantPast, displayed: countEntry.displayed, number: Int(countEntry.number), step: Int(countEntry.step), theme: countEntry.theme ?? "Bismuth", title: countEntry.title ?? "Untitled", id: countEntry.uuid ?? UUID())
-                                    counts.append(count)
-                                }
+                                counts = loadCounts(db: countsDB)
                             }
                             
                         }
@@ -216,13 +220,41 @@ struct MainView: View {
                 
             }
             .onAppear{
-                for countEntry in countsDB {
-                    let count = Count(date: countEntry.date ?? Date.distantPast, displayed: countEntry.displayed, number: Int(countEntry.number), step: Int(countEntry.step), theme: countEntry.theme ?? "Bismuth", title: countEntry.title ?? "Untitled", id: countEntry.uuid ?? UUID())
-                    counts.append(count)
-                }
+                counts = loadCounts(db: countsDB)
             }
         }
     }
+}
+
+func loadCounts(db: FetchedResults<Database>) -> [Count] {
+    let defaults = UserDefaults.standard
+    var organized = defaults.object(forKey:"OrganizedCounts") as? [String] ?? []
+    
+    var counts : [Count] = []
+    for countEntry in db {
+        let count = Count(date: countEntry.date ?? Date.distantPast, displayed: countEntry.displayed, number: Int(countEntry.number), step: Int(countEntry.step), theme: countEntry.theme ?? "Bismuth", title: countEntry.title ?? "Untitled", id: countEntry.uuid ?? UUID())
+        counts.append(count)
+    }
+    
+    for count in counts {
+        if !(organized.contains(count.id.uuidString)) {
+            organized.append(count.id.uuidString)
+        }
+    }
+    var output : [Count] = []
+    
+    for uuid in organized {
+        let count = counts.first(where: {$0.id.uuidString == uuid})
+        if count != nil {
+            output.append(count!)
+        }
+        //if the uuid is stored, but no longer exists as a count in DB
+        else {
+            organized.remove(object: uuid)
+        }
+    }
+    defaults.set(organized, forKey: "OrganizedCounts")
+    return output
 }
 
 func fetchCount(count: Count ,results: FetchedResults<Database>) -> FetchedResults<Database>.Element? {
