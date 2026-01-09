@@ -113,13 +113,16 @@ struct CountViewNew: View {
                             .padding()
                             .fontWeight(.semibold)
                             .font(.largeTitle)
-                            .onSubmit {
-                                counts.first?.title = title
-                                try? moc.save()
-                            }
+                            .submitLabel(.done)
                             .minimumScaleFactor(0.5)
                             .frame(width: geo.size.width * 0.5)
                             .scrollDismissesKeyboard(.immediately)
+                            .onChange(of: textFieldIsFocused) { old, new in
+                                if new == false {
+                                    counts.first?.title = title
+                                    try? moc.save()
+                                }
+                            }
                         
                         Text(String(Int(stepVal)))
                             .frame(width: 75, height: 50)
@@ -360,6 +363,7 @@ struct CountViewNew: View {
                 }
                 
             }
+            .frame(width: geo.size.width, height: geo.size.height)
             
         }
         .interactiveDismissDisabled()

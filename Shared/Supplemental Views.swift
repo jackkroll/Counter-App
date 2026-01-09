@@ -21,7 +21,6 @@ struct UpdateLog: View {
                         .fontWeight(.semibold)
                         .padding()
                 }
-                ScrollView{
                     VStack{
                         HStack{
                             Text("• Quick access +/- buttons")
@@ -31,7 +30,6 @@ struct UpdateLog: View {
                             Spacer()
                         }
                         
-                        VStack{
                             HStack{
                                 Text("• Accessible colors")
                                     .padding()
@@ -56,8 +54,7 @@ struct UpdateLog: View {
                             }
                             
                             
-                        }
-                        .padding()
+                        
                     }
                     
                     
@@ -76,7 +73,6 @@ struct UpdateLog: View {
                     .onTapGesture {
                         dismiss()
                     }
-                }
             }
             .interactiveDismissDisabled()
             
