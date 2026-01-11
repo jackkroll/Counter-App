@@ -24,7 +24,6 @@ var body: some View {
         Main(number: Int(counts.first?.number ?? 0), step: Int(counts.first?.step ?? 0), countTitle: counts.first?.title ?? "Untitled")
     }
      */
-    
     MainView()
     
 }

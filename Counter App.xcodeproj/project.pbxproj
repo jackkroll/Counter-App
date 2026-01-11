@@ -8,26 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		042602F22965FBFB00F4055D /* Supplemental Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042602F12965FBFB00F4055D /* Supplemental Views.swift */; };
-		042602F32965FBFB00F4055D /* Supplemental Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042602F12965FBFB00F4055D /* Supplemental Views.swift */; };
 		0475A9FD28B93B7700E47EEA /* Database.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0475A9FB28B93B7700E47EEA /* Database.xcdatamodeld */; };
-		0475A9FE28B93B7700E47EEA /* Database.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0475A9FB28B93B7700E47EEA /* Database.xcdatamodeld */; };
 		0475AA0028B93DED00E47EEA /* Data Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0475A9FF28B93DED00E47EEA /* Data Controller.swift */; };
-		0475AA0128B93DED00E47EEA /* Data Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0475A9FF28B93DED00E47EEA /* Data Controller.swift */; };
 		0475AA0328B949F900E47EEA /* View Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0475AA0228B949F900E47EEA /* View Controller.swift */; };
-		0475AA0428B949F900E47EEA /* View Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0475AA0228B949F900E47EEA /* View Controller.swift */; };
 		0491BE26289858F9009B0214 /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0491BE25289858F9009B0214 /* Tests_iOS.swift */; };
 		0491BE28289858F9009B0214 /* Tests_iOSLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0491BE27289858F9009B0214 /* Tests_iOSLaunchTests.swift */; };
 		0491BE32289858F9009B0214 /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0491BE31289858F9009B0214 /* Tests_macOS.swift */; };
 		0491BE34289858F9009B0214 /* Tests_macOSLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0491BE33289858F9009B0214 /* Tests_macOSLaunchTests.swift */; };
 		0491BE35289858F9009B0214 /* Funni_ProjectsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0491BE0D289858F4009B0214 /* Funni_ProjectsApp.swift */; };
-		0491BE36289858F9009B0214 /* Funni_ProjectsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0491BE0D289858F4009B0214 /* Funni_ProjectsApp.swift */; };
 		0491BE37289858F9009B0214 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0491BE0E289858F4009B0214 /* ContentView.swift */; };
-		0491BE38289858F9009B0214 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0491BE0E289858F4009B0214 /* ContentView.swift */; };
 		04FA1F59295651F400486C65 /* CountViewNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FA1F58295651F400486C65 /* CountViewNew.swift */; };
-		04FA1F5A295651F400486C65 /* CountViewNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FA1F58295651F400486C65 /* CountViewNew.swift */; };
+		567630D92F11A86D00501093 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 567630D72F11A86D00501093 /* Localizable.xcstrings */; };
 		568825A12DC55397004AF370 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 568825A02DC55397004AF370 /* Assets.xcassets */; };
-		568825A32DC55BD0004AF370 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568825A22DC55BD0004AF370 /* MainView.swift */; };
 		568825A42DC55BD0004AF370 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568825A22DC55BD0004AF370 /* MainView.swift */; };
+		56BB6EF62F1310A500964A98 /* Add Count Sheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BB6EF42F1310A500964A98 /* Add Count Sheet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,13 +31,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 0491BE13289858F9009B0214;
 			remoteInfo = "Funni Projects (iOS)";
-		};
-		0491BE2E289858F9009B0214 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0491BE08289858F4009B0214 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 0491BE19289858F9009B0214;
-			remoteInfo = "Funni Projects (macOS)";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -70,7 +57,6 @@
 		0491BE0D289858F4009B0214 /* Funni_ProjectsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Funni_ProjectsApp.swift; sourceTree = "<group>"; };
 		0491BE0E289858F4009B0214 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		0491BE14289858F9009B0214 /* Counter App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Counter App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		0491BE1A289858F9009B0214 /* Counter App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Counter App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0491BE1C289858F9009B0214 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		0491BE21289858F9009B0214 /* Tests iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0491BE25289858F9009B0214 /* Tests_iOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_iOS.swift; sourceTree = "<group>"; };
@@ -79,19 +65,14 @@
 		0491BE31289858F9009B0214 /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
 		0491BE33289858F9009B0214 /* Tests_macOSLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOSLaunchTests.swift; sourceTree = "<group>"; };
 		04FA1F58295651F400486C65 /* CountViewNew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountViewNew.swift; sourceTree = "<group>"; };
+		567630D72F11A86D00501093 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		568825A02DC55397004AF370 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		568825A22DC55BD0004AF370 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		56BB6EF42F1310A500964A98 /* Add Count Sheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Add Count Sheet.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		0491BE11289858F9009B0214 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		0491BE17289858F9009B0214 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -148,6 +129,8 @@
 				042602F12965FBFB00F4055D /* Supplemental Views.swift */,
 				0475A9FB28B93B7700E47EEA /* Database.xcdatamodeld */,
 				568825A22DC55BD0004AF370 /* MainView.swift */,
+				56BB6EF42F1310A500964A98 /* Add Count Sheet.swift */,
+				567630D72F11A86D00501093 /* Localizable.xcstrings */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -156,7 +139,6 @@
 			isa = PBXGroup;
 			children = (
 				0491BE14289858F9009B0214 /* Counter App.app */,
-				0491BE1A289858F9009B0214 /* Counter App.app */,
 				0491BE21289858F9009B0214 /* Tests iOS.xctest */,
 				0491BE2D289858F9009B0214 /* Tests macOS.xctest */,
 			);
@@ -212,23 +194,6 @@
 			productReference = 0491BE14289858F9009B0214 /* Counter App.app */;
 			productType = "com.apple.product-type.application";
 		};
-		0491BE19289858F9009B0214 /* Counter App (macOS) */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 0491BE40289858F9009B0214 /* Build configuration list for PBXNativeTarget "Counter App (macOS)" */;
-			buildPhases = (
-				0491BE16289858F9009B0214 /* Sources */,
-				0491BE17289858F9009B0214 /* Frameworks */,
-				0491BE18289858F9009B0214 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "Counter App (macOS)";
-			productName = "Funni Projects (macOS)";
-			productReference = 0491BE1A289858F9009B0214 /* Counter App.app */;
-			productType = "com.apple.product-type.application";
-		};
 		0491BE20289858F9009B0214 /* Tests iOS */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0491BE43289858F9009B0214 /* Build configuration list for PBXNativeTarget "Tests iOS" */;
@@ -258,7 +223,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				0491BE2F289858F9009B0214 /* PBXTargetDependency */,
 			);
 			name = "Tests macOS";
 			productName = "Tests macOS";
@@ -279,9 +243,6 @@
 					0491BE13289858F9009B0214 = {
 						CreatedOnToolsVersion = 13.4.1;
 					};
-					0491BE19289858F9009B0214 = {
-						CreatedOnToolsVersion = 13.4.1;
-					};
 					0491BE20289858F9009B0214 = {
 						CreatedOnToolsVersion = 13.4.1;
 						TestTargetID = 0491BE13289858F9009B0214;
@@ -299,6 +260,12 @@
 			knownRegions = (
 				en,
 				Base,
+				pl,
+				fr,
+				it,
+				de,
+				es,
+				"zh-Hans",
 			);
 			mainGroup = 0491BE07289858F4009B0214;
 			packageReferences = (
@@ -308,7 +275,6 @@
 			projectRoot = "";
 			targets = (
 				0491BE13289858F9009B0214 /* Counter App (iOS) */,
-				0491BE19289858F9009B0214 /* Counter App (macOS) */,
 				0491BE20289858F9009B0214 /* Tests iOS */,
 				0491BE2C289858F9009B0214 /* Tests macOS */,
 			);
@@ -320,14 +286,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				567630D92F11A86D00501093 /* Localizable.xcstrings in Resources */,
 				568825A12DC55397004AF370 /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		0491BE18289858F9009B0214 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,21 +320,7 @@
 				0491BE37289858F9009B0214 /* ContentView.swift in Sources */,
 				0475A9FD28B93B7700E47EEA /* Database.xcdatamodeld in Sources */,
 				0491BE35289858F9009B0214 /* Funni_ProjectsApp.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		0491BE16289858F9009B0214 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0475AA0128B93DED00E47EEA /* Data Controller.swift in Sources */,
-				568825A32DC55BD0004AF370 /* MainView.swift in Sources */,
-				042602F32965FBFB00F4055D /* Supplemental Views.swift in Sources */,
-				0475AA0428B949F900E47EEA /* View Controller.swift in Sources */,
-				04FA1F5A295651F400486C65 /* CountViewNew.swift in Sources */,
-				0491BE38289858F9009B0214 /* ContentView.swift in Sources */,
-				0475A9FE28B93B7700E47EEA /* Database.xcdatamodeld in Sources */,
-				0491BE36289858F9009B0214 /* Funni_ProjectsApp.swift in Sources */,
+				56BB6EF62F1310A500964A98 /* Add Count Sheet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,11 +349,6 @@
 			isa = PBXTargetDependency;
 			target = 0491BE13289858F9009B0214 /* Counter App (iOS) */;
 			targetProxy = 0491BE22289858F9009B0214 /* PBXContainerItemProxy */;
-		};
-		0491BE2F289858F9009B0214 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 0491BE19289858F9009B0214 /* Counter App (macOS) */;
-			targetProxy = 0491BE2E289858F9009B0214 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -469,6 +410,7 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -523,6 +465,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 			};
 			name = Release;
@@ -551,13 +494,13 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.1;
+				MARKETING_VERSION = 2.5;
 				PRODUCT_BUNDLE_IDENTIFIER = JackKroll.TestApp;
 				PRODUCT_NAME = "Counter App";
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -588,73 +531,17 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.1;
+				MARKETING_VERSION = 2.5;
 				PRODUCT_BUNDLE_IDENTIFIER = JackKroll.TestApp;
 				PRODUCT_NAME = "Counter App";
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		0491BE41289858F9009B0214 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
-				CODE_SIGN_IDENTITY = "-";
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEAD_CODE_STRIPPING = YES;
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 12.3;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = JackKroll.TestApp;
-				PRODUCT_NAME = "Counter App";
-				SDKROOT = macosx;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-			};
-			name = Debug;
-		};
-		0491BE42289858F9009B0214 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
-				CODE_SIGN_IDENTITY = "-";
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEAD_CODE_STRIPPING = YES;
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 12.3;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = JackKroll.TestApp;
-				PRODUCT_NAME = "Counter App";
-				SDKROOT = macosx;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -756,15 +643,6 @@
 			buildConfigurations = (
 				0491BE3E289858F9009B0214 /* Debug */,
 				0491BE3F289858F9009B0214 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		0491BE40289858F9009B0214 /* Build configuration list for PBXNativeTarget "Counter App (macOS)" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				0491BE41289858F9009B0214 /* Debug */,
-				0491BE42289858F9009B0214 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

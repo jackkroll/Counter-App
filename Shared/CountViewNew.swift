@@ -36,6 +36,7 @@ struct CountViewNew: View {
         
     
     @State var stepVal = 1.0
+    @State var stepperRaw = 1.0
     
     @State var themeColor = CustomColor.noir
     
@@ -45,25 +46,25 @@ struct CountViewNew: View {
     let impactLight = UIImpactFeedbackGenerator(style: .light)
     
     var body: some View {
-        GeometryReader{ geo in
             ZStack{
                 
                 //Number
                 
-                
                 VStack{
                     Spacer()
-                    Text(String(number))
-                        .frame(width: geo.size.width, height: 200)
+                    Text(number.formatted(.number))
+                        .frame(maxWidth: .infinity, maxHeight: 200)
                         .foregroundColor(themeColor)
                         .font(.system(size: 200))
                         .minimumScaleFactor(0.00001)
+                        .contentTransition(.numericText())
                     Spacer()
                 }
-                .frame(width: geo.size.width, height: geo.size.height * 0.8)
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .onAppear{
                     number = Int(counts.first?.number ?? 0)
                     stepVal = Double(counts.first?.step ?? 1)
+                    stepperRaw = stepVal
                     
                     /*
                      "Bronze": [Color.red, Color.white],
@@ -96,14 +97,16 @@ struct CountViewNew: View {
                     counts.first?.number += Int64(counts.first?.step ?? 1)
                     impactLight.impactOccurred()
                     try? moc.save()
-                    number = Int(counts.first?.number ?? 0)
+                    withAnimation {
+                        number = Int(counts.first?.number ?? 0)
+                    }
                     textFieldIsFocused = false
                 }
                 
                 //Header
                 
                 VStack{
-                    HStack{
+                    HStack {
                         TextField("Enter a title here", text: $title)
                             .focused($textFieldIsFocused)
                             .foregroundColor(themeColor)
@@ -115,7 +118,7 @@ struct CountViewNew: View {
                             .font(.largeTitle)
                             .submitLabel(.done)
                             .minimumScaleFactor(0.5)
-                            .frame(width: geo.size.width * 0.5)
+                            //.frame(width: geo.size.width * 0.5)
                             .scrollDismissesKeyboard(.immediately)
                             .onChange(of: textFieldIsFocused) { old, new in
                                 if new == false {
@@ -174,8 +177,8 @@ struct CountViewNew: View {
                                         impactHeavy.impactOccurred()
                                         counts.first?.number -= Int64(counts.first?.step ?? 1)
                                         try? moc.save()
+                                        number = Int(counts.first?.number ?? 0)
                                     }
-                                    number = Int(counts.first?.number ?? 0)
                                 }
                                 .foregroundStyle(themeColor)
                             
@@ -266,17 +269,22 @@ struct CountViewNew: View {
                                         
                                     }
                                     .foregroundColor(.white)
-                                    .frame(width: geo.size.width * 0.9, height: 50)
+                                    .frame(maxWidth: .infinity, maxHeight: 50)
                                 
                                 }
                                 if step && options{
                                     HStack{
                                      
-                                        Slider(value: $stepVal, in: -10...10)
+                                        Slider(value: $stepperRaw, in: -10...9, step: 1)
                                             .tint(colorScheme == .dark ? .black : .white)
-                                            .frame(width: geo.size.width * 0.7)
-                                            .onChange(of: $stepVal.wrappedValue){ _, change in
-                                                counts.first?.step = Int16(change)
+                                            .frame(maxWidth: .infinity)
+                                            .onChange(of: stepperRaw){ _, change in
+                                                var adjustedChange = change
+                                                if adjustedChange >= 0 {
+                                                    adjustedChange += 1
+                                                }
+                                                stepVal = adjustedChange
+                                                counts.first?.step = Int16(adjustedChange)
                                                 try? moc.save()
                                             }
                                             
@@ -289,7 +297,8 @@ struct CountViewNew: View {
                                     }
                                     
                                     .foregroundColor(.white)
-                                    .frame(width: geo.size.width * 0.9, height: 50)
+                                    .frame(maxWidth: .infinity, maxHeight: 50)
+                                    .padding()
                                 }
                                 HStack{
                                     if options{
@@ -356,20 +365,17 @@ struct CountViewNew: View {
                                 .padding()
                             }
                         }
-                        .frame(width: options ? geo.size.width * 0.9 : 50, height: ((colorBar || step) && options) ? 155: 50)
+                        .frame(maxWidth: options ? .infinity : 50, maxHeight: ((colorBar || step) && options) ? 155 : 50)
                         .padding()
                         .foregroundColor(themeColor)
                     }
                 }
                 
             }
-            .frame(width: geo.size.width, height: geo.size.height)
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .interactiveDismissDisabled()
             
         }
-        .interactiveDismissDisabled()
-        
-    }
-    
 }
 
 

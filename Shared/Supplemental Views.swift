@@ -13,49 +13,48 @@ struct UpdateLog: View {
     @Environment(\.dismiss) var dismiss
     @Environment(\.colorScheme) var colorScheme
     var body: some View {
-        GeometryReader{ geo in
             VStack{
                 HStack{
-                    Text("v2.1 Improvements")
+                    Text(LocalizedStringKey("v2.5 Improvements"))
                         .font(.largeTitle)
                         .fontWeight(.semibold)
                         .padding()
                 }
-                    VStack{
-                        HStack{
-                            Text("• Quick access +/- buttons")
-                                .padding()
-                                .font(.title3)
-                                .fontWeight(.semibold)
-                            Spacer()
-                        }
+                    Form {
                         
-                            HStack{
-                                Text("• Accessible colors")
-                                    .padding()
-                                    .font(.title3)
-                                    .fontWeight(.semibold)
-                                Spacer()
-                            }
-                            
-                            HStack{
-                                Text("• Long press to arrange counts")
-                                    .padding()
-                                    .font(.title3)
-                                    .fontWeight(.semibold)
-                                Spacer()
-                            }
-                            HStack{
-                                Text("• Swipe actions to delete/recycle")
-                                    .padding()
-                                    .font(.title3)
-                                    .fontWeight(.semibold)
-                                Spacer()
-                            }
-                            
-                            
+                        VStack(alignment: .leading){
+                            Text(LocalizedStringKey("- Search for your counts"))
+                            Text(LocalizedStringKey("Too many counts? Search for them now!"))
+                                .font(.callout)
+                                .foregroundStyle(.secondary)
+                        }
+                        .listRowSeparator(.hidden)
+                        
+                        VStack(alignment: .leading){
+                            Text(LocalizedStringKey("- iOS 26 Adoption"))
+                            Text(LocalizedStringKey("This was only on a system componant level, the same experience you've used is untouched"))
+                                .font(.callout)
+                                .foregroundStyle(.secondary)
+                        }
+                        .listRowSeparator(.hidden)
+                        VStack(alignment: .leading){
+                            Text(LocalizedStringKey("- Adjusted Navigation"))
+                            Text(LocalizedStringKey("Counts now show entirely full screen"))
+                                .font(.callout)
+                                .foregroundStyle(.secondary)
+                        }
+                        .listRowSeparator(.hidden)
+                        
+                        VStack(alignment: .leading){
+                            Text(LocalizedStringKey("- New Add Count Sheet"))
+                            Text(LocalizedStringKey("Streamlined creating a new count, it will now let you title it up front, and then it will send you right into it"))
+                                .font(.callout)
+                                .foregroundStyle(.secondary)
+                        }
+                        .listRowSeparator(.hidden)
                         
                     }
+                    
                     
                     
                     Spacer()
@@ -69,14 +68,14 @@ struct UpdateLog: View {
                     .cornerRadius(15)
                     .fontWeight(.semibold)
                     .font(.largeTitle)
-                    .frame(width: geo.size.width * 0.9)
+                    .frame(maxWidth: .infinity)
                     .onTapGesture {
                         dismiss()
                     }
+                    .padding()
             }
             .interactiveDismissDisabled()
             
-        }
     }
 }
 
@@ -89,18 +88,16 @@ struct ReviewApp: View{
     @AppStorage("neverShowReview") var reviewMute: Bool = false
     
     var body: some View{
-        GeometryReader{geo in
             VStack{
                 
-                Text("Enjoying Counter App?")
+                Text(LocalizedStringKey("Enjoying Counter App?"))
                     .font(.title2)
                     .fontWeight(.semibold)
                     .padding()
                 
                 HStack{
-                    Spacer()
-                    Text("Not Really")
-                        .frame(width: geo.size.width * 0.4, height: 50)
+                    Text(LocalizedStringKey("Not Really"))
+                        .frame(maxWidth: .infinity, maxHeight: 50)
                         .background(Color.red)
                         .foregroundColor(.white)
                         .cornerRadius(15)
@@ -115,8 +112,8 @@ struct ReviewApp: View{
                             dismiss()
                         }
                     
-                    Text("Love it")
-                        .frame(width: geo.size.width * 0.4, height: 50)
+                    Text(LocalizedStringKey("Love it"))
+                        .frame(maxWidth: .infinity, maxHeight: 50)
                         .background(Color.green)
                         .foregroundColor(.white)
                         .cornerRadius(15)
@@ -125,15 +122,13 @@ struct ReviewApp: View{
                             review()
                             dismiss()
                         }
-                    Spacer()
                 }
-                Spacer()
-                    .frame(height: 20)
                 HStack{
                     Spacer()
-                    Text("Don't show this again")
+                    Text(LocalizedStringKey("Don't show this again"))
                     Spacer()
                 }
+                .padding()
                 .foregroundColor(.white)
                 .cornerRadius(15)
                 .fontWeight(.semibold)
@@ -141,19 +136,17 @@ struct ReviewApp: View{
                     reviewMute = true
                     dismiss()
                 }
-                .frame(width: geo.size.width * 0.8, height: 40)
+                .frame(maxWidth: .infinity, maxHeight: 40)
                 .background(Color.gray)
                 .cornerRadius(10)
             }
+            .padding()
             
         }
-        
-        
-    }
 }
 
 struct Supplemental_Views_Previews: PreviewProvider {
     static var previews: some View {
-        UpdateLog()
+        ReviewApp()
     }
 }

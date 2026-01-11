@@ -29,6 +29,8 @@ struct MainView: View {
     
     @State var showCount = false
     @State var showReview = false
+    @State var showAdd = false
+    @State var searchText: String = ""
     
     @AppStorage("updatelog") var updateLog: String = ""
     @AppStorage("countsClosed") var closed: Int = 1
@@ -40,22 +42,18 @@ struct MainView: View {
     @State var displayUpdateLog = false
     
     var body: some View {
-        GeometryReader{ geo in
-            ZStack{
-                VStack{
-                    HStack{
-                        Text("Current Counts")
-                            .padding()
-                            .fontWeight(.semibold)
-                            .font(.largeTitle)
-                        Spacer()
+        NavigationStack {
+            VStack {
+                if counts.count > 0 || !searchText.isEmpty {
+                    if counts.isEmpty {
+                        ContentUnavailableView {
+                            Label(LocalizedStringKey("No Results"), systemImage: "magnifyingglass")
+                        } description: {
+                            Text(LocalizedStringKey("Try searching for something different"))
+                        }
                     }
-                    if counts.count > 0{
-                        List($counts, editActions: .all) { $count in
-                            ZStack{
-                                RoundedRectangle(cornerRadius: 15)
-                                    .foregroundColor(Color(uiColor: UIColor.systemGray5))
-                                
+                    List {
+                        ForEach($counts) { $count in
                                 HStack{
                                     Text(count.title)
                                         .foregroundColor(colorDecider(inputColor: count.theme))
@@ -70,16 +68,18 @@ struct MainView: View {
                                         .fontWeight(.light)
                                         .font(.title)
                                         .padding()
+                                        .contentTransition(.numericText())
                                     
                                 }
+                                .padding()
+                                .background(Color(uiColor: UIColor.systemGray6))
+                                .clipShape(RoundedRectangle(cornerRadius: 10))
                                 
-                                
-                            }
-                            
                             .transition(.opacity)
                             .listRowSeparator(.hidden)
+                            .listRowBackground(Color.clear)
                             .transition(.opacity)
-                            .frame(width: geo.size.width * 0.9, height: geo.size.height * 0.125)
+                            .frame(maxWidth: .infinity)
                             .onTapGesture {
                                 let countInDB = fetchCount(count: count, results: countsDB)
                                 if countInDB != nil {
@@ -88,25 +88,26 @@ struct MainView: View {
                                     showCount = true
                                 }
                             }
+                            
                             .swipeActions(edge: .trailing) {
                                 Button{
-                                    let countInDB = fetchCount(count: count, results: countsDB)
-                                    if countInDB != nil{
-                                        moc.delete(countInDB!)
+                                    
+                                    if let countInDB = fetchCount(count: count, results: countsDB) {
+                                        moc.delete(countInDB)
                                         try? moc.save()
                                         withAnimation{
                                             counts.remove(object: count)
                                         }
                                     }
+                                    
                                 } label: {
-                                    Label("Delete", systemImage: "trash")
+                                    Label(LocalizedStringKey("Delete"), systemImage: "trash")
                                 }
                                 .tint(.red)
                                 
                                 Button{
-                                    let countInDB = fetchCount(count: count, results: countsDB)
-                                    if countInDB != nil{
-                                        countInDB!.number = 0
+                                    if let countInDB = fetchCount(count: count, results: countsDB){
+                                        countInDB.number = 0
                                         try? moc.save()
                                         withAnimation {
                                             count.number = 0
@@ -114,21 +115,24 @@ struct MainView: View {
                                     }
                                     
                                 } label: {
-                                    Label("Recycle", systemImage: "arrow.3.trianglepath")
+                                    Label(LocalizedStringKey("Recycle"), systemImage: "arrow.3.trianglepath")
+                                        .bold()
                                 }
                                 .tint(.yellow)
                                 
                             }
                             
+                            
                         }
-                        .safeAreaInset(edge: .bottom, content: {
-                            Spacer()
-                                .frame(height: 100)
-                        })
-                        .listStyle(.plain)
-                        .scrollContentBackground(.hidden)
-                        .background(Color.clear)
-                        .onChange(of: counts) { _, newValue in
+                        .onMove(perform: moveCounts)
+                        .moveDisabled(!searchText.isEmpty)
+                    }
+                    .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always))
+                    .listStyle(.plain)
+                    .scrollContentBackground(.hidden)
+                    .background(Color.clear)
+                    .onChange(of: counts) { _, newValue in
+                        if searchText.isEmpty {
                             let defaults = UserDefaults.standard
                             var organized : [String] = []
                             for count in newValue {
@@ -136,92 +140,140 @@ struct MainView: View {
                             }
                             defaults.set(organized, forKey: "OrganizedCounts")
                         }
-                        .sheet(isPresented: $showCount){
-                            CountViewNew()
-                                .onDisappear{
-                                    closed += 1
-                                    if closed % 11 == 0 && closed != 0 && !reviewMute{
-                                        showReview = true
-                                        
-                                    }
-                                    else{
-                                        print(closed)
-                                    }
-                                }
-                        }
-                        .onChange(of: showCount) { _, newValue in
-                            if newValue == false{
-                                counts = loadCounts(db: countsDB)
-                            }
-                            
-                        }
-                        .sheet(isPresented: $showReview){
-                            ReviewApp()
-                                .presentationDetents([.fraction(1/3)])
-                                .onDisappear{
-                                    closed += 1
-                                }
-                            
-                        }
                     }
-                    else{
-                        Text("You don't have any current counts, add one below")
-                            .padding()
-                            .font(.title2)
+                    .onChange(of: showCount) { _, newValue in
+                        counts = loadCounts(db: countsDB)
+                    }
+                    .sheet(isPresented: $showReview){
+                        ReviewApp()
+                            .presentationDetents([.fraction(1/3)])
+                            .onDisappear{
+                                closed += 1
+                            }
+                        
                     }
                 }
-                VStack{
-                    Spacer()
-                    //Bottom Menu
-                    
-                    HStack{
-                        if counts.count > 0{
-                            Spacer()
-                        }
-                        RoundedRectangle(cornerRadius: 15)
-                            .frame(width: counts.count > 0 ? 70 : geo.size.width - 50, height: 70)
-                            .foregroundColor(colorScheme == .dark ? .white : .black)
-                            .overlay{
-                                Image(systemName: "plus")
-                                    .resizable()
-                                    .padding()
-                                    .scaledToFit()
-                                    .foregroundColor(colorScheme == .dark ? .black : .white)
-                                
-                            }
-                            .onTapGesture {
-                                withAnimation{
-                                    let count = Database(context: moc)
-                                    count.number = Int64(0)
-                                    count.step = 1
-                                    count.title = "Untitled"
-                                    count.theme = ["Lead", "Copper", "Bismuth", "Bronze", "Platinum", "Gold"].randomElement()!
-                                    count.date = Date()
-                                    count.uuid = UUID()
-                                    try? moc.save()
-                                    withAnimation {
-                                        counts.append(Count(date: count.date!, displayed: false, number: Int(count.number), step: Int(count.step), theme: count.theme!, title: count.title!, id: count.uuid!))
-                                    }
-                                }
-                            }
+                else{
+                    ContentUnavailableView {
+                        Label(LocalizedStringKey("No Saved Counts"), systemImage: "rectangle.portrait.on.rectangle.portrait.fill")
+                    } description: {
+                        Text(LocalizedStringKey("Create a count by adding one below"))
                     }
                 }
-                .onAppear{
-                    if updateLog != appVersion{
-                        displayUpdateLog = true
-                        updateLog = appVersion ?? "1.20"
+            }
+            .onChange(of: searchText) {
+                let allCounts = loadCounts(db: countsDB)
+                if searchText.isEmpty {
+                    withAnimation {
+                        counts = allCounts
                     }
-                    
                 }
-                .padding()
-                .sheet(isPresented: $displayUpdateLog){
-                    UpdateLog()
+                else {
+                    withAnimation {
+                        counts = allCounts.filter({$0.title.localizedCaseInsensitiveContains(searchText)})
+                    }
                 }
                 
             }
+            .navigationDestination(isPresented: $showCount, destination: {
+                CountViewNew()
+                    .onDisappear{
+                        closed += 1
+                        if closed % 11 == 0 && closed != 0 && !reviewMute{
+                            showReview = true
+                            
+                        }
+                        else{
+                            print(closed)
+                        }
+                    }
+                    .navigationBarBackButtonHidden(true)
+            })
+            .sheet(isPresented: $showAdd) {
+                AddCountSheet(showSheet: $showCount)
+                    .presentationDetents([.fraction(1/3)])
+            }
+            .navigationTitle(LocalizedStringKey("Current Counts"))
+            .safeAreaInset(edge: .bottom) {
+                HStack {
+                    if counts.count > 0 || !searchText.isEmpty {
+                        Spacer()
+                    }
+                    Button {
+                        withAnimation {
+                            showAdd = true
+                        }
+                    } label: {
+                        Image(systemName: "plus")
+                            .resizable()
+                            .padding()
+                            .scaledToFit()
+                            .foregroundColor(colorScheme == .dark ? .black : .white)
+                            .frame(maxWidth: counts.count > 0 || !searchText.isEmpty ? 70 : .infinity, maxHeight: 70)
+                    }
+                    .background(colorScheme == .dark ? .white : .black)
+                    .modifier {
+                        if #available(iOS 26, *) {
+                            $0.clipShape(ConcentricRectangle(corners: .concentric(minimum: 12), isUniform: true))
+                        } else {
+                            $0.clipShape(Capsule())
+                        }
+                    }
+                    .padding(10)
+                    /*
+                     RoundedRectangle(cornerRadius: 15)
+                     .frame(maxWidth: counts.count > 0 ? 70 : .infinity, maxHeight: 70)
+                     .foregroundColor(colorScheme == .dark ? .white : .black)
+                     .overlay{
+                     Image(systemName: "plus")
+                     .resizable()
+                     .padding()
+                     .scaledToFit()
+                     .foregroundColor(colorScheme == .dark ? .black : .white)
+                     
+                     }
+                     .onTapGesture {
+                     withAnimation{
+                     let count = Database(context: moc)
+                     count.number = Int64(0)
+                     count.step = 1
+                     count.title = "Untitled"
+                     count.theme = ["Lead", "Copper", "Bismuth", "Bronze", "Platinum", "Gold"].randomElement()!
+                     count.date = Date()
+                     count.uuid = UUID()
+                     try? moc.save()
+                     withAnimation {
+                     counts.append(Count(date: count.date!, displayed: false, number: Int(count.number), step: Int(count.step), theme: count.theme!, title: count.title!, id: count.uuid!))
+                     }
+                     }
+                     }
+                     */
+                }
+                .ignoresSafeArea(.all)
+            }
             .onAppear{
                 counts = loadCounts(db: countsDB)
+                
+                if updateLog != appVersion{
+                    displayUpdateLog = true
+                    updateLog = appVersion ?? "1.20"
+                }
+                
             }
+            .sheet(isPresented: $displayUpdateLog){
+                UpdateLog()
+            }
+            .searchToolbarIfAvailable()
+        }
+        
+    }
+    
+    private func moveCounts(from source: IndexSet, to destination: Int) {
+        counts.move(fromOffsets: source, toOffset: destination)
+        if searchText.isEmpty {
+            let defaults = UserDefaults.standard
+            let organized = counts.map { $0.id.uuidString }
+            defaults.set(organized, forKey: "OrganizedCounts")
         }
     }
 }
@@ -274,6 +326,36 @@ extension Array where Element: Equatable {
         remove(at: index)
     }
 }
+public extension View {
+    /// Modify a view with a `ViewBuilder` closure.
+    ///
+    /// This represents a streamlining of the
+    /// [`modifier`](https://developer.apple.com/documentation/swiftui/view/modifier(_:))
+    /// \+ [`ViewModifier`](https://developer.apple.com/documentation/swiftui/viewmodifier)
+    /// pattern.
+    /// - Note: Useful only when you don't need to reuse the closure.
+    /// If you do, turn the closure into an extension! ♻️
+    func modifier<ModifiedContent: View>(
+        @ViewBuilder body: (_ content: Self) -> ModifiedContent
+    ) -> ModifiedContent {
+        body(self)
+    }
+}
+
+extension View {
+    @ViewBuilder
+    func searchToolbarIfAvailable() -> some View {
+        if #available(iOS 26.0, *) {
+            self.toolbar{
+                DefaultToolbarItem(kind: .search, placement: .topBarTrailing)
+            }
+        } else {
+            self
+        }
+    }
+}
+
+
 
 func colorDecider(inputColor : String) -> Color {
     switch inputColor {
@@ -294,8 +376,15 @@ func colorDecider(inputColor : String) -> Color {
     }
 }
 
-struct MainView_Previews: PreviewProvider {
-    static var previews: some View {
-        MainView()
-    }
+#Preview("Empty State") {
+    MainView()
 }
+#Preview("With Test Data") {
+    let counts = [
+        Count(date: .now, displayed: true, number: 42, step: 1, theme: "Gold", title: "Gold Counter", id: UUID()),
+        Count(date: .now, displayed: true, number: 17, step: 2, theme: "Platinum", title: "Platinum Steps", id: UUID()),
+        Count(date: .now, displayed: true, number: 8, step: 1, theme: "Bronze", title: "Bronze Medal", id: UUID())
+    ]
+    MainView(counts: counts)
+}
+
