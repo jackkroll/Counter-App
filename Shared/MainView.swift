@@ -7,7 +7,7 @@
 //
 
 import SwiftUI
-import CoreData
+import SwiftData
 
 struct Count : Identifiable, Equatable{
     var date : Date
@@ -23,9 +23,9 @@ struct Count : Identifiable, Equatable{
 struct MainView: View {
     @Environment(\.colorScheme) var colorScheme
     
-    @Environment(\.managedObjectContext) var moc
+    @Environment(\.modelContext) var modelContext
     @State var counts : [Count] = []
-    @FetchRequest(sortDescriptors: [SortDescriptor(\.date, order: .reverse)]) var countsDB: FetchedResults<Database>
+    @Query(sort: \Database.date, order: .reverse) var countsDB: [Database]
     
     @State var showCount = false
     @State var showReview = false
@@ -84,7 +84,7 @@ struct MainView: View {
                                 let countInDB = fetchCount(count: count, results: countsDB)
                                 if countInDB != nil {
                                     countInDB!.date = .now
-                                    try? moc.save()
+                                    try? modelContext.save()
                                     showCount = true
                                 }
                             }
@@ -93,8 +93,8 @@ struct MainView: View {
                                 Button{
                                     
                                     if let countInDB = fetchCount(count: count, results: countsDB) {
-                                        moc.delete(countInDB)
-                                        try? moc.save()
+                                        modelContext.delete(countInDB)
+                                        try? modelContext.save()
                                         withAnimation{
                                             counts.remove(object: count)
                                         }
@@ -108,7 +108,7 @@ struct MainView: View {
                                 Button{
                                     if let countInDB = fetchCount(count: count, results: countsDB){
                                         countInDB.number = 0
-                                        try? moc.save()
+                                        try? modelContext.save()
                                         withAnimation {
                                             count.number = 0
                                         }
@@ -191,7 +191,7 @@ struct MainView: View {
             })
             .sheet(isPresented: $showAdd) {
                 AddCountSheet(showSheet: $showCount)
-                    .presentationDetents([.fraction(1/3)])
+                    .presentationDetents([.fraction(1/2.5)])
             }
             .navigationTitle(LocalizedStringKey("Current Counts"))
             .safeAreaInset(edge: .bottom) {
@@ -234,16 +234,17 @@ struct MainView: View {
                      }
                      .onTapGesture {
                      withAnimation{
-                     let count = Database(context: moc)
-                     count.number = Int64(0)
-                     count.step = 1
-                     count.title = "Untitled"
-                     count.theme = ["Lead", "Copper", "Bismuth", "Bronze", "Platinum", "Gold"].randomElement()!
-                     count.date = Date()
-                     count.uuid = UUID()
-                     try? moc.save()
+                     let count = Database(
+                         date: Date(),
+                         number: 0,
+                         step: 1,
+                         theme: ["Lead", "Copper", "Bismuth", "Bronze", "Platinum", "Gold"].randomElement()!,
+                         title: "Untitled"
+                     )
+                     modelContext.insert(count)
+                     try? modelContext.save()
                      withAnimation {
-                     counts.append(Count(date: count.date!, displayed: false, number: Int(count.number), step: Int(count.step), theme: count.theme!, title: count.title!, id: count.uuid!))
+                     counts.append(Count(date: count.date, displayed: false, number: Int(count.number), step: Int(count.step), theme: count.theme, title: count.title, id: count.uuid))
                      }
                      }
                      }
@@ -252,7 +253,11 @@ struct MainView: View {
                 .ignoresSafeArea(.all)
             }
             .onAppear{
-                counts = loadCounts(db: countsDB)
+                let availableCounts = LegacyCoreDataMigrator.migrateIfNeeded(
+                    existingCounts: countsDB,
+                    modelContext: modelContext
+                )
+                counts = loadCounts(db: availableCounts)
                 
                 if updateLog != appVersion{
                     displayUpdateLog = true
@@ -278,13 +283,13 @@ struct MainView: View {
     }
 }
 
-func loadCounts(db: FetchedResults<Database>) -> [Count] {
+func loadCounts(db: [Database]) -> [Count] {
     let defaults = UserDefaults.standard
     var organized = defaults.object(forKey:"OrganizedCounts") as? [String] ?? []
     
     var counts : [Count] = []
     for countEntry in db {
-        let count = Count(date: countEntry.date ?? Date.distantPast, displayed: countEntry.displayed, number: Int(countEntry.number), step: Int(countEntry.step), theme: countEntry.theme ?? "Bismuth", title: countEntry.title ?? "Untitled", id: countEntry.uuid ?? UUID())
+        let count = Count(date: countEntry.date, displayed: countEntry.displayed, number: Int(countEntry.number), step: Int(countEntry.step), theme: countEntry.theme, title: countEntry.title, id: countEntry.uuid)
         counts.append(count)
     }
     
@@ -309,7 +314,7 @@ func loadCounts(db: FetchedResults<Database>) -> [Count] {
     return output
 }
 
-func fetchCount(count: Count ,results: FetchedResults<Database>) -> FetchedResults<Database>.Element? {
+func fetchCount(count: Count, results: [Database]) -> Database? {
     for countDB in results {
         if countDB.uuid == count.id {
             return countDB
@@ -378,13 +383,9 @@ func colorDecider(inputColor : String) -> Color {
 
 #Preview("Empty State") {
     MainView()
+        .modelContainer(PreviewDatabase.container(includeMockCount: false))
 }
-#Preview("With Test Data") {
-    let counts = [
-        Count(date: .now, displayed: true, number: 42, step: 1, theme: "Gold", title: "Gold Counter", id: UUID()),
-        Count(date: .now, displayed: true, number: 17, step: 2, theme: "Platinum", title: "Platinum Steps", id: UUID()),
-        Count(date: .now, displayed: true, number: 8, step: 1, theme: "Bronze", title: "Bronze Medal", id: UUID())
-    ]
-    MainView(counts: counts)
+#Preview("With Mock Count") {
+    MainView()
+        .modelContainer(PreviewDatabase.container())
 }
-

@@ -3,12 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		042602F22965FBFB00F4055D /* Supplemental Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042602F12965FBFB00F4055D /* Supplemental Views.swift */; };
-		0475A9FD28B93B7700E47EEA /* Database.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0475A9FB28B93B7700E47EEA /* Database.xcdatamodeld */; };
 		0475AA0028B93DED00E47EEA /* Data Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0475A9FF28B93DED00E47EEA /* Data Controller.swift */; };
 		0475AA0328B949F900E47EEA /* View Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0475AA0228B949F900E47EEA /* View Controller.swift */; };
 		0491BE26289858F9009B0214 /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0491BE25289858F9009B0214 /* Tests_iOS.swift */; };
@@ -16,7 +15,6 @@
 		0491BE32289858F9009B0214 /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0491BE31289858F9009B0214 /* Tests_macOS.swift */; };
 		0491BE34289858F9009B0214 /* Tests_macOSLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0491BE33289858F9009B0214 /* Tests_macOSLaunchTests.swift */; };
 		0491BE35289858F9009B0214 /* Funni_ProjectsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0491BE0D289858F4009B0214 /* Funni_ProjectsApp.swift */; };
-		0491BE37289858F9009B0214 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0491BE0E289858F4009B0214 /* ContentView.swift */; };
 		04FA1F59295651F400486C65 /* CountViewNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FA1F58295651F400486C65 /* CountViewNew.swift */; };
 		567630D92F11A86D00501093 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 567630D72F11A86D00501093 /* Localizable.xcstrings */; };
 		568825A12DC55397004AF370 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 568825A02DC55397004AF370 /* Assets.xcassets */; };
@@ -51,11 +49,9 @@
 		042602F12965FBFB00F4055D /* Supplemental Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Supplemental Views.swift"; sourceTree = "<group>"; };
 		04341FB528C288FD0072CEFE /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		04341FB728C288FD0072CEFE /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
-		0475A9FC28B93B7700E47EEA /* Database.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Database.xcdatamodel; sourceTree = "<group>"; };
 		0475A9FF28B93DED00E47EEA /* Data Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data Controller.swift"; sourceTree = "<group>"; };
 		0475AA0228B949F900E47EEA /* View Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View Controller.swift"; sourceTree = "<group>"; };
 		0491BE0D289858F4009B0214 /* Funni_ProjectsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Funni_ProjectsApp.swift; sourceTree = "<group>"; };
-		0491BE0E289858F4009B0214 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		0491BE14289858F9009B0214 /* Counter App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Counter App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0491BE1C289858F9009B0214 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		0491BE21289858F9009B0214 /* Tests iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -70,6 +66,10 @@
 		568825A22DC55BD0004AF370 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		56BB6EF42F1310A500964A98 /* Add Count Sheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Add Count Sheet.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		567B6AD72FAE51EE0025CFE6 /* Customization */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Customization; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		0491BE11289858F9009B0214 /* Frameworks */ = {
@@ -123,14 +123,13 @@
 			children = (
 				0491BE0D289858F4009B0214 /* Funni_ProjectsApp.swift */,
 				0475A9FF28B93DED00E47EEA /* Data Controller.swift */,
-				0491BE0E289858F4009B0214 /* ContentView.swift */,
 				0475AA0228B949F900E47EEA /* View Controller.swift */,
-				04FA1F58295651F400486C65 /* CountViewNew.swift */,
+				567B6AD72FAE51EE0025CFE6 /* Customization */,
 				042602F12965FBFB00F4055D /* Supplemental Views.swift */,
-				0475A9FB28B93B7700E47EEA /* Database.xcdatamodeld */,
 				568825A22DC55BD0004AF370 /* MainView.swift */,
 				56BB6EF42F1310A500964A98 /* Add Count Sheet.swift */,
 				567630D72F11A86D00501093 /* Localizable.xcstrings */,
+				04FA1F58295651F400486C65 /* CountViewNew.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -186,6 +185,9 @@
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				567B6AD72FAE51EE0025CFE6 /* Customization */,
 			);
 			name = "Counter App (iOS)";
 			packageProductDependencies = (
@@ -317,8 +319,6 @@
 				042602F22965FBFB00F4055D /* Supplemental Views.swift in Sources */,
 				0475AA0328B949F900E47EEA /* View Controller.swift in Sources */,
 				04FA1F59295651F400486C65 /* CountViewNew.swift in Sources */,
-				0491BE37289858F9009B0214 /* ContentView.swift in Sources */,
-				0475A9FD28B93B7700E47EEA /* Database.xcdatamodeld in Sources */,
 				0491BE35289858F9009B0214 /* Funni_ProjectsApp.swift in Sources */,
 				56BB6EF62F1310A500964A98 /* Add Count Sheet.swift in Sources */,
 			);
@@ -666,19 +666,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		0475A9FB28B93B7700E47EEA /* Database.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				0475A9FC28B93B7700E47EEA /* Database.xcdatamodel */,
-			);
-			currentVersion = 0475A9FC28B93B7700E47EEA /* Database.xcdatamodel */;
-			path = Database.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 0491BE08289858F4009B0214 /* Project object */;
 }

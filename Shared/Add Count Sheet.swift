@@ -7,9 +7,10 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct AddCountSheet: View {
-    @Environment(\.managedObjectContext) var moc
+    @Environment(\.modelContext) var modelContext
     @Environment(\.dismiss) var dismiss
     @Binding var showSheet: Bool
     @State var title: String = ""
@@ -20,14 +21,15 @@ struct AddCountSheet: View {
                     TextField(LocalizedStringKey("Count Title"), text: $title)
                 }
                 Button {
-                    let count = Database(context: moc)
-                    count.number = Int64(0)
-                    count.step = 1
-                    count.title = title.isEmpty ? "Untitled" : title
-                    count.theme = ["Lead", "Copper", "Bismuth", "Bronze", "Platinum", "Gold"].randomElement()!
-                    count.date = .now
-                    count.uuid = UUID()
-                    try? moc.save()
+                    let count = Database(
+                        date: .now,
+                        number: 0,
+                        step: 1,
+                        theme: ["Lead", "Copper", "Bismuth", "Bronze", "Platinum", "Gold"].randomElement()!,
+                        title: title.isEmpty ? "Untitled" : title
+                    )
+                    modelContext.insert(count)
+                    try? modelContext.save()
                     withAnimation {
                         dismiss()
                         showSheet = true
@@ -58,4 +60,5 @@ struct AddCountSheet: View {
 #Preview {
     @Previewable @State var showSheet: Bool = false
     AddCountSheet(showSheet: $showSheet)
+        .modelContainer(PreviewDatabase.container())
 }

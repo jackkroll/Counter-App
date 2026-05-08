@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 //pink
 //green
@@ -19,8 +20,8 @@ import SwiftUI
 struct CountViewNew: View {
     @Environment(\.colorScheme) var colorScheme
     @Environment(\.dismiss) var dismiss
-    @Environment(\.managedObjectContext) var moc
-    @FetchRequest(sortDescriptors: [SortDescriptor(\.date, order: .reverse)]) var counts: FetchedResults<Database>
+    @Environment(\.modelContext) var modelContext
+    @Query(sort: \Database.date, order: .reverse) var counts: [Database]
     
     @State var title = "Untitled"
     
@@ -33,7 +34,6 @@ struct CountViewNew: View {
     @State var uppersegment = false
     
     @State var step = false
-        
     
     @State var stepVal = 1.0
     @State var stepperRaw = 1.0
@@ -55,7 +55,7 @@ struct CountViewNew: View {
                     Text(number.formatted(.number))
                         .frame(maxWidth: .infinity, maxHeight: 200)
                         .foregroundColor(themeColor)
-                        .font(.system(size: 200))
+                        .font(.system(size: 200, weight: counts.first?.fontWeight, design: counts.first?.fontDesign))
                         .minimumScaleFactor(0.00001)
                         .contentTransition(.numericText())
                     Spacer()
@@ -64,6 +64,10 @@ struct CountViewNew: View {
                 .onAppear{
                     number = Int(counts.first?.number ?? 0)
                     stepVal = Double(counts.first?.step ?? 1)
+                    // If it is outside stepper range, adjust to prevent crash
+                    if !(-10...9).contains(stepVal) {
+                        stepVal = 1.0
+                    }
                     stepperRaw = stepVal
                     
                     /*
@@ -96,7 +100,7 @@ struct CountViewNew: View {
                 .onTapGesture {
                     counts.first?.number += Int64(counts.first?.step ?? 1)
                     impactLight.impactOccurred()
-                    try? moc.save()
+                    try? modelContext.save()
                     withAnimation {
                         number = Int(counts.first?.number ?? 0)
                     }
@@ -114,7 +118,8 @@ struct CountViewNew: View {
                                 title = counts.first?.title ?? "Unknown"
                             }
                             .padding()
-                            .fontWeight(.semibold)
+                            .fontWeight(counts.first?.fontWeight)
+                            .fontDesign(counts.first?.fontDesign)
                             .font(.largeTitle)
                             .submitLabel(.done)
                             .minimumScaleFactor(0.5)
@@ -123,7 +128,7 @@ struct CountViewNew: View {
                             .onChange(of: textFieldIsFocused) { old, new in
                                 if new == false {
                                     counts.first?.title = title
-                                    try? moc.save()
+                                    try? modelContext.save()
                                 }
                             }
                         
@@ -176,7 +181,7 @@ struct CountViewNew: View {
                                         textFieldIsFocused = false
                                         impactHeavy.impactOccurred()
                                         counts.first?.number -= Int64(counts.first?.step ?? 1)
-                                        try? moc.save()
+                                        try? modelContext.save()
                                         number = Int(counts.first?.number ?? 0)
                                     }
                                 }
@@ -190,91 +195,125 @@ struct CountViewNew: View {
                                 
                             VStack{
                                 if colorBar && options{
-                                    HStack{
-                                        RoundedRectangle(cornerRadius: 10)
-                                            .padding(3)
-                                            .frame(width: 50, height: 50)
-                                            .foregroundColor(CustomColor.red)
-                                            .onTapGesture {
-                                                withAnimation{
-                                                    themeColor = CustomColor.red
-                                                }
-                                                counts.first?.theme = "Bronze"
-                                                try? moc.save()
+                                    VStack {
+                                        HStack {
+                                            Spacer()
+                                            Button {
+                                                
+                                            } label: {
+                                                Text("Font")
                                             }
-                                            .shadow(radius: 5)
-                                        RoundedRectangle(cornerRadius: 10)
-                                            .padding(3)
-                                            .frame(width: 50, height: 50)
-                                            .foregroundColor(CustomColor.yellow)
-                                            .onTapGesture {
-                                                withAnimation{
-                                                    themeColor = CustomColor.yellow
-                                                }
-                                                counts.first?.theme = "Gold"
-                                                try? moc.save()
+                                            .buttonStyle(.bordered)
+                                            .buttonBorderShape(.capsule)
+                                            Spacer()
+                                            Button {
+                                                
+                                            } label: {
+                                                Text("Color+")
                                             }
-                                            .shadow(radius: 5)
-                                        RoundedRectangle(cornerRadius: 10)
-                                            .padding(3)
-                                            .frame(width: 50, height: 50)
-                                            .foregroundColor(CustomColor.green)
-                                            .onTapGesture {
-                                                withAnimation{
-                                                    themeColor = CustomColor.green
-                                                }
-                                                counts.first?.theme = "Copper"
-                                                try? moc.save()
+                                            .buttonStyle(.bordered)
+                                            .buttonBorderShape(.capsule)
+                                            Spacer()
+                                            
+                                            Button {
+                                                
+                                            } label: {
+                                                Text("Haptics")
                                             }
-                                            .shadow(radius: 5)
+                                            .buttonStyle(.bordered)
+                                            .buttonBorderShape(.capsule)
+                                            Spacer()
+                                            
+                                        }
                                         
-                                        RoundedRectangle(cornerRadius: 10)
-                                            .padding(3)
-                                            .frame(width: 50, height: 50)
-                                            .foregroundColor(CustomColor.blue)
-                                            .onTapGesture {
-                                                withAnimation{
-                                                    themeColor = CustomColor.blue
+                                        .fontWeight(.bold)
+                                        .padding()
+                                        .frame(maxWidth: .infinity)
+                                        HStack{
+                                            RoundedRectangle(cornerRadius: 10)
+                                                .padding(3)
+                                                .frame(width: 50, height: 50)
+                                                .foregroundColor(CustomColor.red)
+                                                .onTapGesture {
+                                                    withAnimation{
+                                                        themeColor = CustomColor.red
+                                                    }
+                                                    counts.first?.theme = "Bronze"
+                                                    try? modelContext.save()
                                                 }
-                                                counts.first?.theme = "Platinum"
-                                                try? moc.save()
-                                            }
-                                            .shadow(radius: 5)
-                                        RoundedRectangle(cornerRadius: 10)
-                                            .padding(3)
-                                            .frame(width: 50, height: 50)
-                                            .foregroundColor(CustomColor.pink)
-                                            .onTapGesture {
-                                                withAnimation{
-                                                    themeColor = CustomColor.pink
+                                                .shadow(radius: 5)
+                                            RoundedRectangle(cornerRadius: 10)
+                                                .padding(3)
+                                                .frame(width: 50, height: 50)
+                                                .foregroundColor(CustomColor.yellow)
+                                                .onTapGesture {
+                                                    withAnimation{
+                                                        themeColor = CustomColor.yellow
+                                                    }
+                                                    counts.first?.theme = "Gold"
+                                                    try? modelContext.save()
                                                 }
-                                                counts.first?.theme = "Bismuth"
-                                                try? moc.save()
-                                            }
-                                            .shadow(radius: 5)
-                                        RoundedRectangle(cornerRadius: 10)
-                                            .padding(3)
-                                            .frame(width: 50, height: 50)
-                                            .foregroundColor(colorScheme == .dark ? .black : .white)
-                                            .onTapGesture {
-                                                withAnimation{
-                                                    themeColor = CustomColor.noir
+                                                .shadow(radius: 5)
+                                            RoundedRectangle(cornerRadius: 10)
+                                                .padding(3)
+                                                .frame(width: 50, height: 50)
+                                                .foregroundColor(CustomColor.green)
+                                                .onTapGesture {
+                                                    withAnimation{
+                                                        themeColor = CustomColor.green
+                                                    }
+                                                    counts.first?.theme = "Copper"
+                                                    try? modelContext.save()
                                                 }
-                                                counts.first?.theme = "Lead"
-                                                try? moc.save()
-                                            }
-                                            .shadow(radius: 5)
-                                        
-                                        
-                                        
+                                                .shadow(radius: 5)
+                                            
+                                            RoundedRectangle(cornerRadius: 10)
+                                                .padding(3)
+                                                .frame(width: 50, height: 50)
+                                                .foregroundColor(CustomColor.blue)
+                                                .onTapGesture {
+                                                    withAnimation{
+                                                        themeColor = CustomColor.blue
+                                                    }
+                                                    counts.first?.theme = "Platinum"
+                                                    try? modelContext.save()
+                                                }
+                                                .shadow(radius: 5)
+                                            RoundedRectangle(cornerRadius: 10)
+                                                .padding(3)
+                                                .frame(width: 50, height: 50)
+                                                .foregroundColor(CustomColor.pink)
+                                                .onTapGesture {
+                                                    withAnimation{
+                                                        themeColor = CustomColor.pink
+                                                    }
+                                                    counts.first?.theme = "Bismuth"
+                                                    try? modelContext.save()
+                                                }
+                                                .shadow(radius: 5)
+                                            RoundedRectangle(cornerRadius: 10)
+                                                .padding(3)
+                                                .frame(width: 50, height: 50)
+                                                .foregroundColor(colorScheme == .dark ? .black : .white)
+                                                .onTapGesture {
+                                                    withAnimation{
+                                                        themeColor = CustomColor.noir
+                                                    }
+                                                    counts.first?.theme = "Lead"
+                                                    try? modelContext.save()
+                                                }
+                                                .shadow(radius: 5)
+                                            
+                                            
+                                            
+                                        }
                                     }
                                     .foregroundColor(.white)
-                                    .frame(maxWidth: .infinity, maxHeight: 50)
+                                    .frame(maxWidth: .infinity, maxHeight: 150)
                                 
                                 }
                                 if step && options{
                                     HStack{
-                                     
                                         Slider(value: $stepperRaw, in: -10...9, step: 1)
                                             .tint(colorScheme == .dark ? .black : .white)
                                             .frame(maxWidth: .infinity)
@@ -285,7 +324,7 @@ struct CountViewNew: View {
                                                 }
                                                 stepVal = adjustedChange
                                                 counts.first?.step = Int16(adjustedChange)
-                                                try? moc.save()
+                                                try? modelContext.save()
                                             }
                                             
                                         
@@ -324,7 +363,7 @@ struct CountViewNew: View {
                                             .contentShape(Rectangle())
                                             .onTapGesture {
                                                 counts.first?.number = 0
-                                                try? moc.save()
+                                                try? modelContext.save()
                                                 number = Int(counts.first?.number ?? 0)
                                             }
                                         Spacer()
@@ -374,7 +413,7 @@ struct CountViewNew: View {
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .interactiveDismissDisabled()
-            
+
         }
 }
 
@@ -400,5 +439,6 @@ struct CustomColor {
 struct CountViewNew_Previews: PreviewProvider {
     static var previews: some View {
         CountViewNew()
+            .modelContainer(PreviewDatabase.container())
     }
 }

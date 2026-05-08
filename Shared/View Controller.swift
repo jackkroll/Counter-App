@@ -10,21 +10,7 @@ import Foundation
 import SwiftUI
 
 struct ViewController: View{
-    
-    @Environment(\.managedObjectContext) var moc
-    @FetchRequest(sortDescriptors: [SortDescriptor(\.date, order: .reverse)]) var counts: FetchedResults<Database>
-
-var body: some View {
-    //sswitch to make count view the default
-    /*
-    if counts.count == 0 || counts.first?.displayed == false {
-     CountView()
+    var body: some View {
+        MainView()
     }
-    else{
-        Main(number: Int(counts.first?.number ?? 0), step: Int(counts.first?.step ?? 0), countTitle: counts.first?.title ?? "Untitled")
-    }
-     */
-    MainView()
-    
-}
 }

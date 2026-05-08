@@ -219,6 +219,12 @@
       },
       "shouldTranslate" : false
     },
+    "Color" : {
+
+    },
+    "Color+" : {
+
+    },
     "Count Title" : {
       "localizations" : {
         "de" : {
@@ -258,6 +264,9 @@
           }
         }
       }
+    },
+    "Counter Color" : {
+
     },
     "Counts now show entirely full screen" : {
       "localizations" : {
@@ -580,6 +589,7 @@
       }
     },
     "Enter Title" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -618,6 +628,21 @@
           }
         }
       }
+    },
+    "Example Count Title" : {
+
+    },
+    "Font" : {
+
+    },
+    "Font Design" : {
+
+    },
+    "Font Weight" : {
+
+    },
+    "Haptics" : {
+
     },
     "Love it" : {
       "localizations" : {
@@ -780,6 +805,7 @@
       }
     },
     "Options" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
