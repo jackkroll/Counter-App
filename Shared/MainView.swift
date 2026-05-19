@@ -16,6 +16,9 @@ struct Count : Identifiable, Equatable{
     var step : Int
     var theme : String
     var title : String
+    var fontDesign: Font.Design
+    var fontWeight: Font.Weight
+    var customColorHex: String?
     var id: UUID
 }
 
@@ -56,17 +59,16 @@ struct MainView: View {
                         ForEach($counts) { $count in
                                 HStack{
                                     Text(count.title)
-                                        .foregroundColor(colorDecider(inputColor: count.theme))
+                                        .foregroundColor(colorDecider(inputColor: count.theme, customColorHex: count.customColorHex))
                                         .fontWeight(.semibold)
-                                        .font(.title)
+                                        .font(.system(.title, design: count.fontDesign, weight: count.fontWeight))
                                         .padding()
                                     
                                     
                                     Spacer()
                                     Text("\(count.number)")
-                                        .foregroundColor(colorDecider(inputColor: count.theme))
-                                        .fontWeight(.light)
-                                        .font(.title)
+                                        .foregroundColor(colorDecider(inputColor: count.theme, customColorHex: count.customColorHex))
+                                        .font(.system(.title, design: count.fontDesign, weight: count.fontWeight))
                                         .padding()
                                         .contentTransition(.numericText())
                                     
@@ -268,7 +270,6 @@ struct MainView: View {
             .sheet(isPresented: $displayUpdateLog){
                 UpdateLog()
             }
-            .searchToolbarIfAvailable()
         }
         
     }
@@ -289,7 +290,18 @@ func loadCounts(db: [Database]) -> [Count] {
     
     var counts : [Count] = []
     for countEntry in db {
-        let count = Count(date: countEntry.date, displayed: countEntry.displayed, number: Int(countEntry.number), step: Int(countEntry.step), theme: countEntry.theme, title: countEntry.title, id: countEntry.uuid)
+        let count = Count(
+            date: countEntry.date,
+            displayed: countEntry.displayed,
+            number: Int(countEntry.number),
+            step: Int(countEntry.step),
+            theme: countEntry.theme,
+            title: countEntry.title,
+            fontDesign: countEntry.fontDesign,
+            fontWeight: countEntry.fontWeight,
+            customColorHex: countEntry.customColorHex,
+            id: countEntry.uuid
+        )
         counts.append(count)
     }
     
@@ -347,22 +359,11 @@ public extension View {
     }
 }
 
-extension View {
-    @ViewBuilder
-    func searchToolbarIfAvailable() -> some View {
-        if #available(iOS 26.0, *) {
-            self.toolbar{
-                DefaultToolbarItem(kind: .search, placement: .topBarTrailing)
-            }
-        } else {
-            self
-        }
+func colorDecider(inputColor : String, customColorHex: String? = nil) -> Color {
+    if let color = Color(rgbHexString: customColorHex) {
+        return color
     }
-}
 
-
-
-func colorDecider(inputColor : String) -> Color {
     switch inputColor {
     case "Bronze":
         return CustomColor.red

@@ -16,7 +16,9 @@
 		0491BE34289858F9009B0214 /* Tests_macOSLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0491BE33289858F9009B0214 /* Tests_macOSLaunchTests.swift */; };
 		0491BE35289858F9009B0214 /* Funni_ProjectsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0491BE0D289858F4009B0214 /* Funni_ProjectsApp.swift */; };
 		04FA1F59295651F400486C65 /* CountViewNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FA1F58295651F400486C65 /* CountViewNew.swift */; };
+		561240132FBBA32C00E0305A /* CounterIcon.icon in Resources */ = {isa = PBXBuildFile; fileRef = 561240122FBBA32C00E0305A /* CounterIcon.icon */; };
 		567630D92F11A86D00501093 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 567630D72F11A86D00501093 /* Localizable.xcstrings */; };
+		567B6AE32FB22F450025CFE6 /* Counter - Tallying app.storekit in Resources */ = {isa = PBXBuildFile; fileRef = 567B6AE22FB22F450025CFE6 /* Counter - Tallying app.storekit */; };
 		568825A12DC55397004AF370 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 568825A02DC55397004AF370 /* Assets.xcassets */; };
 		568825A42DC55BD0004AF370 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568825A22DC55BD0004AF370 /* MainView.swift */; };
 		56BB6EF62F1310A500964A98 /* Add Count Sheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BB6EF42F1310A500964A98 /* Add Count Sheet.swift */; };
@@ -61,7 +63,9 @@
 		0491BE31289858F9009B0214 /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
 		0491BE33289858F9009B0214 /* Tests_macOSLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOSLaunchTests.swift; sourceTree = "<group>"; };
 		04FA1F58295651F400486C65 /* CountViewNew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountViewNew.swift; sourceTree = "<group>"; };
+		561240122FBBA32C00E0305A /* CounterIcon.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = CounterIcon.icon; sourceTree = "<group>"; };
 		567630D72F11A86D00501093 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		567B6AE22FB22F450025CFE6 /* Counter - Tallying app.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Counter - Tallying app.storekit"; sourceTree = "<group>"; };
 		568825A02DC55397004AF370 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		568825A22DC55BD0004AF370 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		56BB6EF42F1310A500964A98 /* Add Count Sheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Add Count Sheet.swift"; sourceTree = "<group>"; };
@@ -108,6 +112,7 @@
 		0491BE07289858F4009B0214 = {
 			isa = PBXGroup;
 			children = (
+				567B6AE22FB22F450025CFE6 /* Counter - Tallying app.storekit */,
 				568825A02DC55397004AF370 /* Assets.xcassets */,
 				0491BE0C289858F4009B0214 /* Shared */,
 				0491BE1B289858F9009B0214 /* macOS */,
@@ -115,6 +120,7 @@
 				0491BE30289858F9009B0214 /* Tests macOS */,
 				04341FB428C288FD0072CEFE /* Frameworks */,
 				0491BE15289858F9009B0214 /* Products */,
+				561240122FBBA32C00E0305A /* CounterIcon.icon */,
 			);
 			sourceTree = "<group>";
 		};
@@ -288,8 +294,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				561240132FBBA32C00E0305A /* CounterIcon.icon in Resources */,
 				567630D92F11A86D00501093 /* Localizable.xcstrings in Resources */,
 				568825A12DC55397004AF370 /* Assets.xcassets in Resources */,
+				567B6AE32FB22F450025CFE6 /* Counter - Tallying app.storekit in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -473,7 +481,7 @@
 		0491BE3E289858F9009B0214 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = CounterIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -494,7 +502,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.5;
+				MARKETING_VERSION = 2.6;
 				PRODUCT_BUNDLE_IDENTIFIER = JackKroll.TestApp;
 				PRODUCT_NAME = "Counter App";
 				SDKROOT = iphoneos;
@@ -510,7 +518,7 @@
 		0491BE3F289858F9009B0214 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = CounterIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -531,7 +539,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.5;
+				MARKETING_VERSION = 2.6;
 				PRODUCT_BUNDLE_IDENTIFIER = JackKroll.TestApp;
 				PRODUCT_NAME = "Counter App";
 				SDKROOT = iphoneos;

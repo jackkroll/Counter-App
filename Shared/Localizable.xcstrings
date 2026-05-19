@@ -1,168 +1,137 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
-    "- Adjusted Navigation" : {
+    "" : {
+
+    },
+    "- Database Upgrade" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "- Angepasste Navigation"
+            "value" : "- Datenbankupgrade"
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "- Navegación ajustada"
+            "value" : "- Actualización de la base de datos"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "- Navigation ajustée"
+            "value" : "- Mise à niveau de la base de données"
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "- Navigazione modificata"
+            "value" : "- Aggiornamento del database"
           }
         },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "- Dostosowana nawigacja"
+            "value" : "- Ulepszenie bazy danych"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "- 调整后的导航"
+            "value" : "- 数据库升级"
           }
         }
       }
     },
-    "- iOS 26 Adoption" : {
+    "- Localization Updates" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "- iOS 26-Einführung"
+            "value" : "- Verbesserte Lokalisierung"
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "- Adopción de iOS 26"
+            "value" : "- Mejoras de localización"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "- Adoption d'iOS 26"
+            "value" : "- Améliorations de la localisation"
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "- Adozione di iOS 26"
+            "value" : "- Miglioramenti della localizzazione"
           }
         },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "- Przyjęcie systemu iOS 26"
+            "value" : "- Ulepszenia lokalizacji"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "- iOS 26 实现"
+            "value" : "- 本地化更新"
           }
         }
       }
     },
-    "- New Add Count Sheet" : {
+    "- Optional Customization Pack" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "- Neues Zählblatt hinzufügen"
+            "value" : "- Optionales Anpassungspaket"
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "- Nueva hoja para añadir recuentos"
+            "value" : "- Paquete de personalización opcional"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "- Nouvelle façon d'ajouter un compteur"
+            "value" : "- Pack de personnalisation optionnel"
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "- Nuovo metodo per aggiungere i contatori"
+            "value" : "- Pacchetto di personalizzazione opzionale"
           }
         },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "- Nowa procedura tworzenia licznika."
+            "value" : "- Opcjonalny pakiet personalizacji"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "- 种添加计数的新方法"
-          }
-        }
-      }
-    },
-    "- Search for your counts" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "- Suchen Sie nach Ihren Zählern."
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "- Buscar tus recuentos"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "- Recherchez dans vos compteurs."
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "- Cerca i tuoi contatori"
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "- Wyszukaj swoje liczniki"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "- 搜索您的计数"
+            "value" : "- 可选自定义包"
           }
         }
       }
     },
     "%lld" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -170,6 +139,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "%lld"
@@ -192,6 +167,12 @@
     },
     "👍" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "👍"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -199,6 +180,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "👍"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "👍"
@@ -219,91 +206,282 @@
       },
       "shouldTranslate" : false
     },
-    "Color" : {
-
+    "0 (off)" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "0 (aus)"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "0 (desactivado)"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "0 (désactivé)"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "0 (disattivato)"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "0 (wyl.)"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "0（关闭）"
+          }
+        }
+      }
     },
-    "Color+" : {
-
+    "1/2s" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "1/2 s"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "1/2 s"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "1/2 s"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "1/2 s"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "1/2 s"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "1/2 秒"
+          }
+        }
+      }
+    },
+    "A one-time unlock helps keep Counter simple, useful, and actively cared for." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Eine einmalige Freischaltung hilft, Counter einfach, nützlich und aktiv gepflegt zu halten."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Un desbloqueo único ayuda a mantener Counter sencilla, útil y cuidada activamente."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Un déverrouillage unique aide à garder Counter simple, utile et activement entretenue."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uno sblocco una tantum aiuta a mantenere Counter semplice, utile e curata attivamente."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jednorazowe odblokowanie pomaga utrzymać Counter jako prostą, użyteczną i aktywnie rozwijaną aplikację."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "一次性解锁可帮助 Counter 保持简洁、实用并持续维护。"
+          }
+        }
+      }
+    },
+    "Choose a haptic style or dial in your own tap feedback." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wähle einen Haptikstil oder stelle dein eigenes Tipp-Feedback ein."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Elige un estilo háptico o ajusta tu propia respuesta al tocar."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Choisissez un style haptique ou réglez votre propre retour au toucher."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Scegli uno stile aptico o regola il feedback del tocco come preferisci."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wybierz styl haptyki albo dopasuj własną reakcję na stuknięcie."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "选择触感样式，或微调你自己的点按反馈。"
+          }
+        }
+      }
+    },
+    "Color" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Farbe"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Color"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Couleur"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Colore"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kolor"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "颜色"
+          }
+        }
+      }
     },
     "Count Title" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Titel zählen"
+            "value" : "Zählertitel"
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Título del conde"
+            "value" : "Título del contador"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Titre du comte"
+            "value" : "Titre du compteur"
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Titolo del conte"
+            "value" : "Titolo del contatore"
           }
         },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Tytuł hrabiego"
+            "value" : "Nazwa licznika"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "计数名称"
+            "value" : "计数器标题"
           }
         }
       }
     },
     "Counter Color" : {
-
-    },
-    "Counts now show entirely full screen" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Die Zähler werden nun im Vollbildmodus angezeigt."
+            "value" : "Zählerfarbe"
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Los recuentos se muestran ahora en pantalla completa"
+            "value" : "Color del contador"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Les compteurs affichent désormais l'écran en entier."
+            "value" : "Couleur du compteur"
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "I conteggi vengono ora visualizzati a schermo intero"
+            "value" : "Colore del contatore"
           }
         },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Licznik jest teraz wyświetlany na całym ekranie"
+            "value" : "Kolor licznika"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "现在计数器以全屏模式显示。"
+            "value" : "计数器颜色"
           }
         }
       }
@@ -313,37 +491,37 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Erstellen Sie eine Zählung, indem Sie unten eins hinzufügen"
+            "value" : "Erstelle unten einen neuen Zähler"
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Crea un contador sumándole uno."
+            "value" : "Crea un contador añadiendo uno abajo"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Créez un compteur en ajoutant un ci-dessous."
+            "value" : "Créez un compteur en en ajoutant un ci-dessous"
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Crea un conteggio aggiungendo uno di seguito."
+            "value" : "Crea un contatore aggiungendone uno qui sotto"
           }
         },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Utwórz licznik, dodając jeden poniżej"
+            "value" : "Utwórz licznik, dodając go poniżej"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "通过在下方添加内容来创建计数。"
+            "value" : "在下方添加一个计数器"
           }
         }
       }
@@ -359,7 +537,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Crear recuento"
+            "value" : "Crear contador"
           }
         },
         "fr" : {
@@ -371,7 +549,7 @@
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Crea Conteggio"
+            "value" : "Crea contatore"
           }
         },
         "pl" : {
@@ -383,7 +561,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "创建计数"
+            "value" : "创建计数器"
           }
         }
       }
@@ -393,25 +571,25 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Aktuelle Zählerstände"
+            "value" : "Aktuelle Zähler"
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Recuentos Actuales"
+            "value" : "Contadores actuales"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Comptes actuels"
+            "value" : "Compteurs actuels"
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Conteggi Attuali"
+            "value" : "Contatori attuali"
           }
         },
         "pl" : {
@@ -428,6 +606,168 @@
         }
       }
     },
+    "Custom" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Eigene"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Personalizado"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Personnalisé"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Personalizzato"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Własna"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "自定义"
+          }
+        }
+      }
+    },
+    "Customization+" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Anpassung+"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Personalización+"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Personnalisation+"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Personalizzazione+"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Personalizacja+"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "自定义+"
+          }
+        }
+      }
+    },
+    "Database migrated to a modern standard" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Die Datenbank wurde auf einen modernen Standard migriert"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La base de datos se migró a un estándar moderno"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La base de données a été migrée vers un standard moderne"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Il database è stato migrato a uno standard moderno"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Baza danych zostala przeniesiona do nowoczesnego standardu"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "数据库已迁移到现代标准"
+          }
+        }
+      }
+    },
+    "Default" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Standard"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Predeterminado"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Par défaut"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Predefinito"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Domyslna"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "默认"
+          }
+        }
+      }
+    },
     "Delete" : {
       "localizations" : {
         "de" : {
@@ -439,7 +779,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Borrar"
+            "value" : "Eliminar"
           }
         },
         "fr" : {
@@ -451,13 +791,13 @@
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Eliminare"
+            "value" : "Elimina"
           }
         },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Usuwać"
+            "value" : "Usuń"
           }
         },
         "zh-Hans" : {
@@ -468,42 +808,85 @@
         }
       }
     },
+    "Dismiss" : {
+
+    },
     "Don't show this again" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Diese Meldung nicht mehr anzeigen"
+            "value" : "Nicht mehr anzeigen"
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "No volver a mostrar esto."
+            "value" : "No volver a mostrar"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ne plus afficher ceci"
+            "value" : "Ne plus afficher"
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Non mostrare più questo messaggio"
+            "value" : "Non mostrare più"
           }
         },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Nie pokazuj tego ponownie"
+            "value" : "Nie pokazuj ponownie"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "不要再次显示此内容。"
+            "value" : "不再显示"
+          }
+        }
+      }
+    },
+    "Duration" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dauer"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Duración"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Durée"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Durata"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Czas trwania"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "持续时间"
           }
         }
       }
@@ -513,83 +896,42 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Gefällt Ihnen die Zähler-App?"
+            "value" : "Gefällt dir Counter App?"
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "¿Disfrutas de la aplicación \"Counter App\""
+            "value" : "¿Te gusta Counter App?"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Vous appréciez l'application de compteur?"
+            "value" : "Vous aimez Counter App ?"
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ti piace l'app Contatore?"
+            "value" : "Ti piace Counter App?"
           }
         },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Podoba Ci się aplikacja licznika?"
+            "value" : "Podoba Ci się Counter App?"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "喜欢这款计数器应用吗？"
+            "value" : "喜欢 Counter App 吗？"
           }
         }
       }
     },
     "Enter a title here" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Geben Sie hier einen Titel ein"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Introduce un título aquí"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Saisissez un titre ici"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Inserisci un titolo qui"
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Wprowadź tytuł tutaj"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "在此输入标题"
-          }
-        }
-      }
-    },
-    "Enter Title" : {
-      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -600,25 +942,25 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Introduzca el título"
+            "value" : "Introduce un título"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Saisir le titre"
+            "value" : "Saisissez un titre"
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Inserisci il titolo"
+            "value" : "Inserisci un titolo"
           }
         },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Wprowadź tytuł"
+            "value" : "Wpisz nazwę"
           }
         },
         "zh-Hans" : {
@@ -630,56 +972,687 @@
       }
     },
     "Example Count Title" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Beispielzähler"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Titulo de ejemplo"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Titre de compteur exemple"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Titolo contatore di esempio"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Przykładowa nazwa licznika"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "示例计数器标题"
+          }
+        }
+      }
     },
     "Font" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Schrift"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fuente"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Police"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Font"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Czcionka"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "字体"
+          }
+        }
+      }
     },
     "Font Design" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Schriftdesign"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Diseño de fuente"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Style de police"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Design del font"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Styl czcionki"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "字体样式"
+          }
+        }
+      }
     },
     "Font Weight" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Schriftstärke"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Grosor de fuente"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Graisse de police"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Peso del font"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Grubość czcionki"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "字体粗细"
+          }
+        }
+      }
+    },
+    "Fonts, custom colors, and haptics for every counter." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Schriften, eigene Farben und Haptik für jeden Zähler."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fuentes, colores personalizados y háptica para cada contador."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Polices, couleurs personnalisées et retour haptique pour chaque compteur."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Font, colori personalizzati e feedback aptico per ogni contatore."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Czcionki, własne kolory i haptyka dla każdego licznika."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "为每个计数器提供字体、自定义颜色和触感反馈。"
+          }
+        }
+      }
+    },
+    "Go beyond the built-in themes with a custom color per counter." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gehe über die integrierten Designs hinaus und lege für jeden Zähler eine eigene Farbe fest."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ve más allá de los temas incluidos con un color personalizado por contador."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dépassez les thèmes intégrés avec une couleur personnalisée pour chaque compteur."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vai oltre i temi integrati con un colore personalizzato per ogni contatore."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wyjdź poza wbudowane motywy, ustawiając własny kolor dla każdego licznika."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "不止内置主题，还可为每个计数器设置自定义颜色。"
+          }
+        }
+      }
     },
     "Haptics" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Haptik"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Háptica"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Retour haptique"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Feedback aptico"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Haptyka"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "触感反馈"
+          }
+        }
+      }
+    },
+    "Heavy" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stark"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fuerte"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fort"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Forte"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mocny"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "重"
+          }
+        }
+      }
+    },
+    "Intensity" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Intensität"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Intensidad"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Intensité"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Intensità"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Intensywność"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "强度"
+          }
+        }
+      }
+    },
+    "Light" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Leicht"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ligero"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Léger"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Leggero"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lekki"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "轻"
+          }
+        }
+      }
+    },
+    "Loading Customization+" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Anpassung+ wird geladen"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cargando Personalización+"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chargement de Personnalisation+"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Caricamento Personalizzazione+"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ładowanie Personalizacja+"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "正在加载自定义+"
+          }
+        }
+      }
+    },
+    "Localization is now more accurate" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Die Übersetzungen sind jetzt genauer"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La localización ahora es más precisa"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La localisation est maintenant plus précise"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La localizzazione ora è più accurata"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lokalizacja jest teraz dokładniejsza"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "本地化现在更加准确"
+          }
+        }
+      }
     },
     "Love it" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ich liebe es"
+            "value" : "Gefällt mir sehr"
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Es genial"
+            "value" : "Me encanta"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Aimer"
+            "value" : "J'adore"
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Lo adoro"
+            "value" : "La adoro"
           }
         },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Uwielbiam to"
+            "value" : "Uwielbiam"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "爱它"
+            "value" : "喜欢"
+          }
+        }
+      }
+    },
+    "Make every counter feel yours" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mach jeden Zähler zu deinem eigenen"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Haz que cada contador sea tuyo"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Personnalisez chaque compteur"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rendi ogni contatore davvero tuo"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spraw, by każdy licznik był Twój"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "让每个计数器都更合你心意"
+          }
+        }
+      }
+    },
+    "Make taps feel right" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lass jedes Tippen passend wirken"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Haz que cada toque se sienta bien"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Donnez le bon ressenti a chaque toucher"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rendi ogni tocco piu naturale"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spraw, by stuknięcia miały odpowiednie odczucie"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "让每次点按手感合适"
+          }
+        }
+      }
+    },
+    "Medium" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mittel"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Medio"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Moyen"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Medio"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sredni"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "中"
+          }
+        }
+      }
+    },
+    "Monospaced" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nichtproportional"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Monoespaciada"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chasse fixe"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Monospaziato"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Monospace"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "等宽"
           }
         }
       }
@@ -695,7 +1668,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Sin Resultados"
+            "value" : "Sin resultados"
           }
         },
         "fr" : {
@@ -729,31 +1702,31 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Keine gespeicherten Zählungen"
+            "value" : "Keine gespeicherten Zähler"
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "No hay recuentos guardados."
+            "value" : "No hay contadores guardados"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Aucun compteur n'a été enregistré"
+            "value" : "Aucun compteur enregistré"
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Nessun conteggio salvato"
+            "value" : "Nessun contatore salvato"
           }
         },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Brak Zapisanych Liczników"
+            "value" : "Brak zapisanych liczników"
           }
         },
         "zh-Hans" : {
@@ -775,7 +1748,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "No tanto"
+            "value" : "No mucho"
           }
         },
         "fr" : {
@@ -799,48 +1772,207 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "并不真地"
+            "value" : "不太喜欢"
           }
         }
       }
     },
-    "Options" : {
-      "extractionState" : "stale",
+    "OK" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Optionen"
+            "value" : "OK"
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Opciones"
+            "value" : "OK"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Possibilités"
+            "value" : "OK"
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Opzioni"
+            "value" : "OK"
           }
         },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Opcje"
+            "value" : "OK"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "选项"
+            "value" : "好"
+          }
+        }
+      }
+    },
+    "or click the counter above!" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "oder tippe oben auf den Zähler!"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¡o toca el contador de arriba!"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ou touchez le compteur ci-dessus !"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "oppure tocca il contatore qui sopra!"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "albo stuknij licznik powyżej!"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "或点按上方的计数器！"
+          }
+        }
+      }
+    },
+    "Pick the font weight and design that matches the thing you are counting." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wähle Schriftstärke und Design passend zu dem, was du zählst."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Elige el grosor y el diseño de fuente que encajen con lo que cuentas."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Choisissez la graisse et le style de police adaptés à ce que vous comptez."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Scegli peso e design del font più adatti a ciò che stai contando."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wybierz grubość i styl czcionki pasujące do tego, co liczysz."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "选择适合所计数内容的字体粗细和样式。"
+          }
+        }
+      }
+    },
+    "Play Haptics" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Haptik testen"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Probar háptica"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tester le retour haptique"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prova feedback aptico"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Odtwórz haptykę"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "播放触感反馈"
+          }
+        }
+      }
+    },
+    "Purchased" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gekauft"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Comprado"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Achete"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Acquistato"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kupiono"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "已购买"
           }
         }
       }
@@ -850,157 +1982,611 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Recyceln"
+            "value" : "Zurücksetzen"
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Reciclar"
+            "value" : "Restablecer"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Recycler"
+            "value" : "Réinitialiser"
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Riciclare"
+            "value" : "Reimposta"
           }
         },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Odzyskiwać"
+            "value" : "Resetuj"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "回收"
+            "value" : "重置"
           }
         }
       }
     },
-    "Streamlined creating a new count, it will now let you title it up front, and then it will send you right into it" : {
+    "Redeem Code" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Das Erstellen einer neuen Zählung wurde vereinfacht: Sie können ihr nun zuerst einen Titel geben und dann direkt mit dem Zählen beginnen."
+            "value" : "Code einlösen"
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "The process for initiating a new recount has been simplified."
+            "value" : "Canjear código"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "La création d'un nouveau compteur a été simplifiée : vous pouvez lui donner un titre dès le départ, puis vous êtes directement redirigé vers la fonction de comptage"
+            "value" : "Utiliser un code"
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Abbiamo semplificato il processo di creazione di un nuovo conteggio: ora puoi assegnargli un nome fin da subito e poi iniziare a utilizzarlo immediatamente."
+            "value" : "Riscatta codice"
           }
         },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Proces tworzenia nowego licznika został uproszczony; teraz można najpierw nadać licznikowi nazwę, a następnie od razu rozpocząć liczenie."
+            "value" : "Wykorzystaj kod"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "简化了创建新计数器的流程，您可以先命名计数器，然后直接开始计数。"
+            "value" : "兑换代码"
           }
         }
       }
     },
-    "This was only on a system componant level, the same experience you've used is untouched" : {
+    "Restore Purchases" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Dies war lediglich ein Update einer Systemkomponente, das gewohnte und beliebte Benutzererlebnis bleibt unverändert!"
+            "value" : "Käufe wiederherstellen"
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Manteniendo la misma experiencia a la que estás acostumbrado, a la vez que se actualizan algunos componentes."
+            "value" : "Restaurar compras"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Seuls les composants du système ont été mis à jour, l'expérience que vous appréciez tant reste inchangée"
+            "value" : "Restaurer les achats"
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Questa adozione ha riguardato solo un componente a livello di sistema; l'esperienza che conoscete e apprezzate è rimasta invariata."
+            "value" : "Ripristina acquisti"
           }
         },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Dotyczyło to jedynie komponentów systemowych, a znane i lubiane przez Was funkcje pozostały niezmienione"
+            "value" : "Przywróć zakupy"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "只有系统组件进行了更新，用户体验保持不变。"
+            "value" : "恢复购买"
           }
         }
       }
     },
-    "Too many counts? Search for them now!" : {
+    "Rigid" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Zu viele Theken? Suchen Sie danach!"
+            "value" : "Hart"
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "¿Guardaste demasiados? Busca exactamente lo que necesitas."
+            "value" : "Rígido"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Trop de compteurs enregistrés ? Recherchez-les dès maintenant !"
+            "value" : "Rigide"
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Troppi contatori? Cercali subito!"
+            "value" : "Rigido"
           }
         },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Za dużo liczników? Znajdź je już teraz!"
+            "value" : "Sztywny"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "商品太多？立即搜索！"
+            "value" : "硬"
+          }
+        }
+      }
+    },
+    "Rounded" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abgerundet"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Redondeada"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Arrondie"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Arrotondato"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zaokrąglona"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "圆角"
+          }
+        }
+      }
+    },
+    "Serif" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Serif"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Con serifas"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Serif"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Serif"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Szeryfowa"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "衬线"
+          }
+        }
+      }
+    },
+    "Sharpness" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Schärfe"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nitidez"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Netteté"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nitidezza"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ostrość"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "清脆度"
+          }
+        }
+      }
+    },
+    "Soft" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Weich"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Suave"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Doux"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Morbido"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Miekki"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "柔和"
+          }
+        }
+      }
+    },
+    "Store Issue" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Store-Problem"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Problema de la tienda"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Problème avec la boutique"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Problema dello store"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Problem ze sklepem"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "商店问题"
+          }
+        }
+      }
+    },
+    "Style" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stil"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Estilo"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Style"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stile"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Styl"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "样式"
+          }
+        }
+      }
+    },
+    "Support a small app" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unterstuetze eine kleine App"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apoya una app pequeña"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Soutenez une petite app"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sostieni una piccola app"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wesprzyj mala aplikacje"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "支持一款小应用"
+          }
+        }
+      }
+    },
+    "Support an indie app" : {
+
+    },
+    "Support ongoing development and unlock new customization features" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unterstütze die Weiterentwicklung und schalte neue Anpassungen frei"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apoya el desarrollo continuo y desbloquea nuevas opciones de personalización"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Soutenez le développement continu et débloquez de nouvelles options de personnalisation"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sostieni lo sviluppo continuo e sblocca nuove opzioni di personalizzazione"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wesprzyj dalszy rozwój i odblokuj nowe opcje personalizacji"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "支持持续开发并解锁新的自定义功能"
+          }
+        }
+      }
+    },
+    "Thank you for using Counter" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Danke, dass du Counter verwendest"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gracias por usar Counter"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Merci d’utiliser Counter"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Grazie per usare Counter"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dziękujemy za korzystanie z Counter"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "感谢使用 Counter"
+          }
+        }
+      }
+    },
+    "Thank you for using Counter :)" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Danke, dass du Counter verwendest :)"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gracias por usar Counter :)"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Merci d’utiliser Counter :)"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Grazie per usare Counter :)"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dziękujemy za korzystanie z Counter :)"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "感谢使用 Counter :)"
+          }
+        }
+      }
+    },
+    "Thank you for using Counter!" : {
+
+    },
+    "Thank you for using Counter! " : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Danke, dass du Counter verwendest! "
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gracias por usar Counter! "
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Merci d’utiliser Counter ! "
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Grazie per usare Counter! "
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dziękujemy za korzystanie z Counter! "
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "感谢使用 Counter！"
           }
         }
       }
@@ -1010,77 +2596,278 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Versuchen Sie, nach etwas anderem zu suchen"
+            "value" : "Versuche es mit einer anderen Suche"
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Prueba con un término de búsqueda diferente"
+            "value" : "Prueba con otra búsqueda"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Essayez de rechercher quelque chose de différent"
+            "value" : "Essayez une autre recherche"
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Prova a cercare qualcosa di diverso."
+            "value" : "Prova a cercare qualcos’altro"
           }
         },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Spróbuj wyszukać czegoś innego"
+            "value" : "Spróbuj wyszukać coś innego"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "尝试搜索其他内容。"
+            "value" : "试试搜索其他内容"
           }
         }
       }
     },
-    "v2.5 Improvements" : {
+    "Tune the personality" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "v2.5 Verbesserungen"
+            "value" : "Passe den Charakter an"
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Improvements in version 2.5"
+            "value" : "Ajusta la personalidad"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Améliorations de la version 2.5"
+            "value" : "Ajustez la personnalité"
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Miglioramenti della versione 2.5"
+            "value" : "Regola la personalita"
           }
         },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ulepszenia w wersji 2.5"
+            "value" : "Dopasuj charakter"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "v2.5 版本改进"
+            "value" : "调出个性"
+          }
+        }
+      }
+    },
+    "Unknown" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unbekannt"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Desconocido"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Inconnu"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sconosciuto"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nieznane"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "未知"
+          }
+        }
+      }
+    },
+    "Unlock Customization+ for %@" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Anpassung+ für %@ freischalten"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Desbloquear Personalización+ por %@"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Débloquer Personnalisation+ pour %@"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sblocca Personalizzazione+ per %@"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Odblokuj Personalizacja+ za %@"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "以 %@ 解锁自定义+"
+          }
+        }
+      }
+    },
+    "Unlock fonts, custom colors, and custom haptics for all of your counts" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Schalte Schriften, eigene Farben und eigene Haptik für alle Zähler frei"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Desbloquea fuentes, colores personalizados y háptica personalizada para todos tus contadores"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Débloquez des polices, des couleurs personnalisées et un retour haptique personnalisé pour tous vos compteurs"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sblocca font, colori personalizzati e feedback aptico per tutti i contatori"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Odblokuj czcionki, własne kolory i haptykę dla wszystkich liczników"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "为所有计数器解锁字体、自定义颜色和自定义触感反馈"
+          }
+        }
+      }
+    },
+    "Use your exact color" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nutze genau deine Farbe"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Usa tu color exacto"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Utilisez votre couleur exacte"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Usa il colore esatto che vuoi"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Użyj dokładnie swojego koloru"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "使用你的专属颜色"
+          }
+        }
+      }
+    },
+    "v2.6 Improvements" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verbesserungen in v2.6"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mejoras de v2.6"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Améliorations de la v2.6"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Miglioramenti v2.6"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ulepszenia w wersji 2.6"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "v2.6 改进"
           }
         }
       }

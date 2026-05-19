@@ -8,6 +8,7 @@
 
 import SwiftUI
 import SwiftData
+import CoreHaptics
 
 //pink
 //green
@@ -21,6 +22,7 @@ struct CountViewNew: View {
     @Environment(\.colorScheme) var colorScheme
     @Environment(\.dismiss) var dismiss
     @Environment(\.modelContext) var modelContext
+    @EnvironmentObject var customizationStore: CustomizationStore
     @Query(sort: \Database.date, order: .reverse) var counts: [Database]
     
     @State var title = "Untitled"
@@ -39,8 +41,10 @@ struct CountViewNew: View {
     @State var stepperRaw = 1.0
     
     @State var themeColor = CustomColor.noir
+    @State var showCustomization = false
     
     @FocusState var textFieldIsFocused : Bool
+    @State var hapticEngine: CHHapticEngine? = try? .init()
     
     let impactHeavy = UIImpactFeedbackGenerator(style: .heavy)
     let impactLight = UIImpactFeedbackGenerator(style: .light)
@@ -69,6 +73,7 @@ struct CountViewNew: View {
                         stepVal = 1.0
                     }
                     stepperRaw = stepVal
+                    prepareHaptics()
                     
                     /*
                      "Bronze": [Color.red, Color.white],
@@ -79,27 +84,12 @@ struct CountViewNew: View {
                      "Copper" : [Color.green, Color.black],
                      "Bismuth" :[Color.pink, Color.black]
                      */
-                    switch counts.first?.theme {
-                    case "Bronze":
-                        themeColor = CustomColor.red
-                    case "Platinum":
-                        themeColor = CustomColor.blue
-                    case "Gold":
-                        themeColor = CustomColor.yellow
-                    case "Lead":
-                        themeColor = CustomColor.noir
-                    case "Copper":
-                        themeColor = CustomColor.green
-                    case "Bismuth":
-                        themeColor = CustomColor.pink
-                    default:
-                        themeColor = CustomColor.noir
-                    }
+                    syncCustomizationState()
                 }
                 .contentShape(Rectangle())
                 .onTapGesture {
                     counts.first?.number += Int64(counts.first?.step ?? 1)
-                    impactLight.impactOccurred()
+                    playCountHaptic()
                     try? modelContext.save()
                     withAnimation {
                         number = Int(counts.first?.number ?? 0)
@@ -123,7 +113,6 @@ struct CountViewNew: View {
                             .font(.largeTitle)
                             .submitLabel(.done)
                             .minimumScaleFactor(0.5)
-                            //.frame(width: geo.size.width * 0.5)
                             .scrollDismissesKeyboard(.immediately)
                             .onChange(of: textFieldIsFocused) { old, new in
                                 if new == false {
@@ -133,11 +122,9 @@ struct CountViewNew: View {
                             }
                         
                         Text(String(Int(stepVal)))
-                            .frame(width: 75, height: 50)
                             .fontWeight(.semibold)
                             .font(.system(size: 40))
                             .minimumScaleFactor(0.1)
-                            .padding()
                             .foregroundColor(themeColor)
                         
                         Spacer()
@@ -194,41 +181,31 @@ struct CountViewNew: View {
                             RoundedRectangle(cornerRadius: 15)
                                 
                             VStack{
+                                if options {
+                                    HStack {
+                                        Button {
+                                            openCustomization()
+                                        } label: {
+                                            HStack {
+                                                Image(systemName: customizationStore.hasCustomizationPack ? "textformat" : "lock")
+                                                Text("Customization+")
+                                            }
+                                            .frame(maxWidth: .infinity)
+                                            .padding(.vertical)
+                                            .background(.thickMaterial)
+                                            .clipShape(Capsule())
+                                        }
+                                    
+                                        
+                                    }
+                                    
+                                    .fontWeight(.bold)
+                                    .padding()
+                                    .frame(maxWidth: .infinity)
+                                }
                                 if colorBar && options{
                                     VStack {
-                                        HStack {
-                                            Spacer()
-                                            Button {
-                                                
-                                            } label: {
-                                                Text("Font")
-                                            }
-                                            .buttonStyle(.bordered)
-                                            .buttonBorderShape(.capsule)
-                                            Spacer()
-                                            Button {
-                                                
-                                            } label: {
-                                                Text("Color+")
-                                            }
-                                            .buttonStyle(.bordered)
-                                            .buttonBorderShape(.capsule)
-                                            Spacer()
-                                            
-                                            Button {
-                                                
-                                            } label: {
-                                                Text("Haptics")
-                                            }
-                                            .buttonStyle(.bordered)
-                                            .buttonBorderShape(.capsule)
-                                            Spacer()
-                                            
-                                        }
                                         
-                                        .fontWeight(.bold)
-                                        .padding()
-                                        .frame(maxWidth: .infinity)
                                         HStack{
                                             RoundedRectangle(cornerRadius: 10)
                                                 .padding(3)
@@ -239,6 +216,7 @@ struct CountViewNew: View {
                                                         themeColor = CustomColor.red
                                                     }
                                                     counts.first?.theme = "Bronze"
+                                                    counts.first?.customColorHex = nil
                                                     try? modelContext.save()
                                                 }
                                                 .shadow(radius: 5)
@@ -251,6 +229,7 @@ struct CountViewNew: View {
                                                         themeColor = CustomColor.yellow
                                                     }
                                                     counts.first?.theme = "Gold"
+                                                    counts.first?.customColorHex = nil
                                                     try? modelContext.save()
                                                 }
                                                 .shadow(radius: 5)
@@ -263,6 +242,7 @@ struct CountViewNew: View {
                                                         themeColor = CustomColor.green
                                                     }
                                                     counts.first?.theme = "Copper"
+                                                    counts.first?.customColorHex = nil
                                                     try? modelContext.save()
                                                 }
                                                 .shadow(radius: 5)
@@ -276,6 +256,7 @@ struct CountViewNew: View {
                                                         themeColor = CustomColor.blue
                                                     }
                                                     counts.first?.theme = "Platinum"
+                                                    counts.first?.customColorHex = nil
                                                     try? modelContext.save()
                                                 }
                                                 .shadow(radius: 5)
@@ -288,6 +269,7 @@ struct CountViewNew: View {
                                                         themeColor = CustomColor.pink
                                                     }
                                                     counts.first?.theme = "Bismuth"
+                                                    counts.first?.customColorHex = nil
                                                     try? modelContext.save()
                                                 }
                                                 .shadow(radius: 5)
@@ -300,6 +282,7 @@ struct CountViewNew: View {
                                                         themeColor = CustomColor.noir
                                                     }
                                                     counts.first?.theme = "Lead"
+                                                    counts.first?.customColorHex = nil
                                                     try? modelContext.save()
                                                 }
                                                 .shadow(radius: 5)
@@ -350,6 +333,9 @@ struct CountViewNew: View {
                                             .contentShape(Rectangle())
                                             .onTapGesture {
                                                 withAnimation{
+                                                    if colorBar {
+                                                        colorBar = false
+                                                    }
                                                     step.toggle()
                                                 }
                                             }
@@ -375,6 +361,9 @@ struct CountViewNew: View {
                                             .frame(width: 40, height: 40)
                                             .onTapGesture {
                                                 withAnimation{
+                                                    if step {
+                                                        step = false
+                                                    }
                                                     colorBar.toggle()
                                                 }
                                             }
@@ -400,21 +389,114 @@ struct CountViewNew: View {
                                                 step = false
                                             }
                                         }
+                                        .contentShape(Rectangle())
                                 }
                                 .padding()
                             }
                         }
-                        .frame(maxWidth: options ? .infinity : 50, maxHeight: ((colorBar || step) && options) ? 155 : 50)
+                        .foregroundStyle(themeColor)
+                        .frame(maxWidth: options ? .infinity : 50, maxHeight: options ? 155 : 50)
+                        //.contentShape(Rectangle())
                         .padding()
-                        .foregroundColor(themeColor)
+                        
                     }
                 }
                 
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .interactiveDismissDisabled()
+            .sheet(isPresented: $showCustomization) {
+                if let count = counts.first {
+                    if customizationStore.hasCustomizationPack {
+                        FontEditor(count: count)
+                            .onDisappear {
+                                syncCustomizationState()
+                            }
+                    } else {
+                        UpsellView()
+                    }
+                }
+            }
 
         }
+
+    private func syncCustomizationState() {
+        guard let count = counts.first else {
+            themeColor = CustomColor.noir
+            return
+        }
+
+        themeColor = colorDecider(inputColor: count.theme, customColorHex: count.customColorHex)
+    }
+
+    private func openCustomization() {
+        showCustomization = true
+    }
+
+    private func prepareHaptics() {
+        guard CHHapticEngine.capabilitiesForHardware().supportsHaptics else { return }
+
+        do {
+            hapticEngine = try CHHapticEngine()
+            try hapticEngine?.start()
+        } catch {
+            print("Error creating the haptic engine: \(error.localizedDescription)")
+        }
+    }
+
+    private func playCountHaptic() {
+        guard let count = counts.first else {
+            impactLight.impactOccurred()
+            return
+        }
+
+        let hapticStyle: CounterHapticStyle
+        if let rawValue = count.hapticStyleRawValue, let savedStyle = CounterHapticStyle(rawValue: rawValue) {
+            hapticStyle = savedStyle
+        } else if count.hapticDuration == nil && count.hapticIntensity == nil && count.hapticSharpness == nil {
+            hapticStyle = .light
+        } else {
+            hapticStyle = .custom
+        }
+
+        if let impactStyle = hapticStyle.impactStyle {
+            UIImpactFeedbackGenerator(style: impactStyle).impactOccurred()
+            return
+        }
+
+        guard
+            let duration = count.hapticDuration,
+            let intensity = count.hapticIntensity,
+            let sharpness = count.hapticSharpness
+        else {
+            impactLight.impactOccurred()
+            return
+        }
+
+        guard duration > 0 else { return }
+        guard CHHapticEngine.capabilitiesForHardware().supportsHaptics else {
+            impactLight.impactOccurred()
+            return
+        }
+
+        do {
+            let event = CHHapticEvent(
+                eventType: .hapticContinuous,
+                parameters: [
+                    CHHapticEventParameter(parameterID: .hapticIntensity, value: Float(intensity)),
+                    CHHapticEventParameter(parameterID: .hapticSharpness, value: Float(sharpness))
+                ],
+                relativeTime: 0,
+                duration: duration
+            )
+            let pattern = try CHHapticPattern(events: [event], parameters: [])
+            let player = try hapticEngine?.makePlayer(with: pattern)
+            try player?.start(atTime: 0)
+        } catch {
+            impactLight.impactOccurred()
+            print("Failed to play custom haptic: \(error.localizedDescription)")
+        }
+    }
 }
 
 
@@ -440,5 +522,6 @@ struct CountViewNew_Previews: PreviewProvider {
     static var previews: some View {
         CountViewNew()
             .modelContainer(PreviewDatabase.container())
+            .environmentObject(CustomizationStore(loadFromStore: false, hasCustomizationPack: true))
     }
 }

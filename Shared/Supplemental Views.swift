@@ -15,7 +15,7 @@ struct UpdateLog: View {
     var body: some View {
             VStack{
                 HStack{
-                    Text(LocalizedStringKey("v2.5 Improvements"))
+                    Text(LocalizedStringKey("v2.6 Improvements"))
                         .font(.largeTitle)
                         .fontWeight(.semibold)
                         .padding()
@@ -23,33 +23,30 @@ struct UpdateLog: View {
                     Form {
                         
                         VStack(alignment: .leading){
-                            Text(LocalizedStringKey("- Search for your counts"))
-                            Text(LocalizedStringKey("Too many counts? Search for them now!"))
+                            Text(LocalizedStringKey("- Optional Customization Pack"))
+                            Text(LocalizedStringKey("Support ongoing development and unlock new customization features"))
                                 .font(.callout)
                                 .foregroundStyle(.secondary)
                         }
                         .listRowSeparator(.hidden)
                         
                         VStack(alignment: .leading){
-                            Text(LocalizedStringKey("- iOS 26 Adoption"))
-                            Text(LocalizedStringKey("This was only on a system componant level, the same experience you've used is untouched"))
+                            Text(LocalizedStringKey("- Database Upgrade"))
+                            Text(LocalizedStringKey("Database migrated to a modern standard"))
                                 .font(.callout)
                                 .foregroundStyle(.secondary)
                         }
                         .listRowSeparator(.hidden)
                         VStack(alignment: .leading){
-                            Text(LocalizedStringKey("- Adjusted Navigation"))
-                            Text(LocalizedStringKey("Counts now show entirely full screen"))
+                            Text(LocalizedStringKey("- Localization Updates"))
+                            Text(LocalizedStringKey("Localization is now more accurate"))
                                 .font(.callout)
                                 .foregroundStyle(.secondary)
                         }
                         .listRowSeparator(.hidden)
                         
                         VStack(alignment: .leading){
-                            Text(LocalizedStringKey("- New Add Count Sheet"))
-                            Text(LocalizedStringKey("Streamlined creating a new count, it will now let you title it up front, and then it will send you right into it"))
-                                .font(.callout)
-                                .foregroundStyle(.secondary)
+                            Text(LocalizedStringKey("Thank you for using Counter"))
                         }
                         .listRowSeparator(.hidden)
                         
@@ -147,6 +144,6 @@ struct ReviewApp: View{
 
 struct Supplemental_Views_Previews: PreviewProvider {
     static var previews: some View {
-        ReviewApp()
+        UpdateLog()
     }
 }

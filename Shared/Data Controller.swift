@@ -10,6 +10,9 @@ import Foundation
 import CoreData
 import SwiftData
 import SwiftUI
+#if canImport(UIKit)
+import UIKit
+#endif
 
 @Model
 final class Database {
@@ -21,6 +24,11 @@ final class Database {
     var title: String
     var fontDesignRawValue: String
     var fontWeightRawValue: String
+    var customColorHex: String?
+    var hapticStyleRawValue: String?
+    var hapticIntensity: Double?
+    var hapticSharpness: Double?
+    var hapticDuration: Double?
     @Attribute(.unique) var uuid: UUID
 
     var fontDesign: Font.Design {
@@ -42,6 +50,11 @@ final class Database {
         title: String = "Untitled",
         fontDesign: Font.Design = .default,
         fontWeight: Font.Weight = .regular,
+        customColorHex: String? = nil,
+        hapticStyle: CounterHapticStyle? = nil,
+        hapticIntensity: Double? = nil,
+        hapticSharpness: Double? = nil,
+        hapticDuration: Double? = nil,
         uuid: UUID = UUID()
     ) {
         self.date = date
@@ -52,6 +65,11 @@ final class Database {
         self.title = title
         self.fontDesignRawValue = Self.rawValue(for: fontDesign)
         self.fontWeightRawValue = Self.rawValue(for: fontWeight)
+        self.customColorHex = customColorHex
+        self.hapticStyleRawValue = hapticStyle?.rawValue
+        self.hapticIntensity = hapticIntensity
+        self.hapticSharpness = hapticSharpness
+        self.hapticDuration = hapticDuration
         self.uuid = uuid
     }
 
@@ -126,6 +144,89 @@ final class Database {
             return "regular"
         }
     }
+}
+
+enum CounterHapticStyle: String, CaseIterable, Identifiable {
+    case custom
+    case light
+    case medium
+    case heavy
+    case soft
+    case rigid
+
+    var id: String { rawValue }
+
+    var label: String {
+        switch self {
+        case .custom:
+            return "Custom"
+        case .light:
+            return "Light"
+        case .medium:
+            return "Medium"
+        case .heavy:
+            return "Heavy"
+        case .soft:
+            return "Soft"
+        case .rigid:
+            return "Rigid"
+        }
+    }
+
+    #if canImport(UIKit)
+    var impactStyle: UIImpactFeedbackGenerator.FeedbackStyle? {
+        switch self {
+        case .custom:
+            return nil
+        case .light:
+            return .light
+        case .medium:
+            return .medium
+        case .heavy:
+            return .heavy
+        case .soft:
+            return .soft
+        case .rigid:
+            return .rigid
+        }
+    }
+    #endif
+}
+
+extension Color {
+    init?(rgbHexString: String?) {
+        guard let rgbHexString else { return nil }
+
+        let sanitized = rgbHexString.trimmingCharacters(in: CharacterSet(charactersIn: "#"))
+        guard sanitized.count == 6, let value = Int(sanitized, radix: 16) else { return nil }
+
+        let red = Double((value >> 16) & 0xFF) / 255
+        let green = Double((value >> 8) & 0xFF) / 255
+        let blue = Double(value & 0xFF) / 255
+
+        self.init(red: red, green: green, blue: blue)
+    }
+
+    #if canImport(UIKit)
+    var rgbHexString: String? {
+        let uiColor = UIColor(self)
+        var red: CGFloat = 0
+        var green: CGFloat = 0
+        var blue: CGFloat = 0
+        var alpha: CGFloat = 0
+
+        guard uiColor.getRed(&red, green: &green, blue: &blue, alpha: &alpha) else {
+            return nil
+        }
+
+        return String(
+            format: "%02X%02X%02X",
+            Int(red * 255),
+            Int(green * 255),
+            Int(blue * 255)
+        )
+    }
+    #endif
 }
 
 enum LegacyCoreDataMigrator {
